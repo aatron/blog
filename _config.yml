@@ -26,7 +26,7 @@ tag_page_dir: tag
 # Windows 8 Tiles
 # ie_frequency: 1440 #1440 is default
 # ie_tile_color:
-ie_tile_small:
-ie_tile_medium:
-ie_tile_wide:
-ie_tile_large:
+# ie_tile_small:
+# ie_tile_medium:
+# ie_tile_wide:
+# ie_tile_large:

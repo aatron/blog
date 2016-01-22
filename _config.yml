@@ -6,13 +6,13 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: aatron Lives.
-email: aatron@aatronlives.com
+title: Aaron Schaefer
+email: blog at aaronschaefer dot com
 description: > # this means to ignore newlines until "baseurl:"
-  Dev who fights for the user.
+  Traded in my keytar for a keyboard.
 baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "http://aatronlives.com" # the base hostname & protocol for your site
-twitter_username: aatronlives
+url: "http://aaronschaefer.com" # the base hostname & protocol for your site
+# twitter_username: 
 github_username:  aatron
 
 # Build settings
@@ -20,8 +20,8 @@ markdown: kramdown
 
 # Custom settings
 # gems: [jekyll/tagging]
-tag_page_layout: tag_page
-tag_page_dir: tag
+# tag_page_layout: tag_page
+# tag_page_dir: tag
 
 # Windows 8 Tiles
 # ie_frequency: 1440 #1440 is default

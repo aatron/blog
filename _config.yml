@@ -1,18 +1,10 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
+
 title: Aaron Schaefer
-email: blog at aaronschaefer dot com
-description: > # this means to ignore newlines until "baseurl:"
-  Traded in my keytar for a keyboard.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "http://aaronschaefer.com" # the base hostname & protocol for your site
-# twitter_username: 
+email: yo at aaronschaefer dot com
+description: aatron lives.
+# baseurl: "/blog" # uncomment this for testing locally
+url: "http://aaronschaefer.com"
 github_username:  aatron
 
 # Build settings
@@ -30,3 +22,6 @@ markdown: kramdown
 # ie_tile_medium:
 # ie_tile_wide:
 # ie_tile_large:
+
+exclude: [Gemfile,LICENSE,README.md]
+permalink: /archive/:year/:month/:day/:title/

@@ -3,17 +3,10 @@
 title: Aaron Schaefer
 email: yo at aaronschaefer dot com
 description: aatron lives.
-# baseurl: "/blog" # uncomment this for testing locally
+baseurl: "/blog" # uncomment this for testing locally in IIS virtual directory
 url: "http://aaronschaefer.com"
 github_username:  aatron
-
-# Build settings
 markdown: kramdown
-
-# Custom settings
-# gems: [jekyll/tagging]
-# tag_page_layout: tag_page
-# tag_page_dir: tag
 
 # Windows 8 Tiles
 # ie_frequency: 1440 #1440 is default
@@ -24,4 +17,4 @@ markdown: kramdown
 # ie_tile_large:
 
 exclude: [Gemfile,LICENSE,README.md]
-permalink: /archive/:year/:month/:day/:title/
+permalink: /blog/:year/:month/:day/:title/

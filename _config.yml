@@ -7,6 +7,7 @@ baseurl: "/blog" # uncomment this for testing locally in IIS virtual directory
 url: "http://aaronschaefer.com"
 github_username:  aatron
 markdown: kramdown
+# permalink: /404.html
 
 # Windows 8 Tiles
 # ie_frequency: 1440 #1440 is default

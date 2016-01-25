@@ -1,0 +1,43 @@
+---
+layout: post
+title: "Octopress 101"
+date: 2016-01-24T10:05:12-08:00
+tags:
+    - blog
+    - Octopress
+    - VS Code
+    - Jekyll
+    - IIS
+---
+
+### Here's why static site generators rock:
+
+* Terms of Use for blog hosting services are confusing
+* Seriously....who owns the data?!
+* Speed. Doesn't get any faster than static pages.
+
+### Here's what I use to write my site:
+
+* [Visual Studio Code](https://code.visualstudio.com/) - open source cross-platform IDE
+* [Octopress](https://github.com/octopress/octopress) - opinionated set of tools based on [Jekyll](http://jekyllrb.com/)
+    * **Be cool**, include the attribution at the bottom.
+* [Redcarpet](https://github.com/vmg/redcarpet) - Rendered code blocks better than kramdown
+
+### Lessons learned:
+
+* Jekyll
+    * Access Site variables from Liquid templates
+        * Example on how plug-ins can get access to the site's _config.yml: 
+
+            `context.registers[:site].config.["title"]`
+        
+    * IIS - don't test using virtual directories
+        * Virtual directory for the blog creates issues with the links.
+
+    * Test by running `jekyll serve` and navigate to [http://localhost:4000](http://localhost:4000) 
+        * You can change the port # by setting the value port in _config.yml like this: 
+
+            `port: 4470 # or any other port number`
+    
+        * Auto updates as you change files, just refresh pages
+        

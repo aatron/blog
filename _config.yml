@@ -14,13 +14,8 @@ port: 4470
 tag_page_dir: /blog/tag
 tag_index_dir: /blog/tags
 
-# Windows 8 Tiles
-# ie_frequency: 1440 #1440 is default
-# ie_tile_color:
-# ie_tile_small:
-# ie_tile_medium:
-# ie_tile_wide:
-# ie_tile_large:
-
 exclude: [Gemfile,LICENSE,README.md]
 permalink: /blog/:year/:month/:day/:title/
+
+gems:
+  - jekyll-sitemap

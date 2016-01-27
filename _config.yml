@@ -17,10 +17,10 @@ tag_index_dir: /blog/tags
 # Windows 8 Tiles
 # ie_frequency: 1440 #1440 is default
 # ie_tile_color:
-ie_tile_small: /win_small.png
-ie_tile_medium: /win_medium.png
-ie_tile_wide: /win_wide.png
-ie_tile_large: /win_large.png
+ie_tile_small: /ietemplates/win_small.png
+ie_tile_medium: /ietemplates/win_medium.png
+ie_tile_wide: /ietemplates/win_wide.png
+ie_tile_large: /ietemplates/win_large.png
 
 exclude: [Gemfile,LICENSE,README.md]
 permalink: /blog/:year/:month/:day/:title/

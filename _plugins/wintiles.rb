@@ -35,7 +35,7 @@ module Jekyll
       # create tile poll files
       # create at most 4
       category = site.config["ie_category"]
-      posts = !category ? site.posts : site.categories.has_key?(category) ? site.categories[category] : site.posts
+      posts = !category ? site.posts.docs : site.categories.has_key?(category) ? site.categories[category].docs : site.posts.docs
       
       count = [posts.length, 4].min
 
@@ -71,13 +71,13 @@ module Jekyll
       xml.tile do |tile|
         tile.visual("lang"=>"en-US", "version"=>"2") do |v|
           v.binding("template"=>"TileSquare150x150Text04", "branding"=>"logo", "fallback"=>"TileSquareImage") do |b|
-            b.tag!("text", @post.title, "id"=>"1")
+            b.tag!("text", @post.data['title'], "id"=>"1")
           end
           v.binding("template"=>"TileWide310x150Text03", "branding"=>"logo", "fallback"=>"TileWideImage") do |b|
-            b.tag!("text", @post.title, "id"=>"1")
+            b.tag!("text", @post.data['title'], "id"=>"1")
           end
           v.binding("template"=>"TileSquare310x310TextList02", "branding"=>"logo", "fallback"=>"TileWideText09") do |b|
-            b.tag!("text", @post.title, "id"=>"1")
+            b.tag!("text", @post.data['title'], "id"=>"1")
             b.tag!("text", shorten(strip(@post.content)),"id"=>"2")
             b.tag!("text", "#{@post.date.month}-#{@post.date.day}-#{@post.date.year}", "id"=>"3")
           end

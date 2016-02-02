@@ -1,0 +1,18 @@
+---
+layout: null
+---
+[{% for doc in site.documentaries %}
+  {
+    "title":  "{{ doc.title | xml_escape }}",
+    "tags": "{{ (doc.tags + doc.categories).join(",") }}",
+    "dateAdded": "{{ doc.date | date_to_xmlschema }}",
+    "recommendation": "{{doc.recommendation}}",
+    "sources": [{% for source in doc.sources %}
+      {
+        "title": "{{source.title}}",
+        "url": "{{source.url}}"  
+      }{% if forloop.length > forloop.index %},{% endif %}{% endfor %}
+    ],
+    "kidFriendly": "{% if kidFriendly == "" %}True{% else %}False{% endif %}"
+  }{% if forloop.length > forloop.index %},{% endif %}{% endfor %}
+]

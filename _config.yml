@@ -2,7 +2,7 @@
 
 title: Aaron Schaefer
 email: yo at aaronschaefer dot com
-description: aatron lives. The news of my life has been greatly underreported.
+description: The news of my life should be greatly underreported.
 url: "http://aaronschaefer.com"
 github_username:  aatron
 markdown: redcarpet # kramdown doesn't seem to do code blocks very well but this one does
@@ -14,6 +14,16 @@ port: 4470
 tag_page_dir: /blog/tag
 tag_index_dir: /blog/tags
 
+# Documentary settings
+documentary_layout: 'documentary' 
+documentary_ext: markdown 
+documentary_template: documentary
+collections:
+  documentaries:
+    output: true
+    permalink: /documentaries/:title
+     
+
 # Windows 8 Tiles
 # ie_frequency: 1440 #1440 is default
 # ie_tile_color:
@@ -22,7 +32,7 @@ ie_tile_medium: /ietemplates/win_medium.png
 ie_tile_wide: /ietemplates/win_wide.png
 ie_tile_large: /ietemplates/win_large.png
 
-exclude: [Gemfile,LICENSE,README.md]
+exclude: [Gemfile,LICENSE,README.md,LocalGems]
 permalink: /blog/:year/:month/:day/:title/
 
 gems:

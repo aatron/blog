@@ -40,4 +40,7 @@ tags:
             `port: 4470 # or any other port number`
     
         * Auto updates as you change files, just refresh pages
+    * Commands
+        * http://jekyllrb.com/docs/plugins/#commands
+        * Commands *have* to be wrapped in a gem that is added to the jekyll_plugins section
         

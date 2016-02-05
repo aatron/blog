@@ -32,7 +32,7 @@ ie_tile_medium: /ietemplates/win_medium.png
 ie_tile_wide: /ietemplates/win_wide.png
 ie_tile_large: /ietemplates/win_large.png
 
-exclude: [Gemfile,LICENSE,README.md,LocalGems]
+exclude: [Gemfile,LICENSE,README.md,LocalGems,gulpfile.js,tsconfig.js,scripts,node_modules,.gitignore,package.json]
 permalink: /blog/:year/:month/:day/:title/
 
 gems:

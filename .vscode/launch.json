@@ -1,0 +1,12 @@
+{
+    "name": "Debug Current TypeScript File",
+    "type": "node",
+    "request": "launch",
+    // File currently being viewed
+    "program": "${file}",
+    "stopOnEntry": true,
+    "args": [],
+    "cwd": ".",
+    "sourceMaps": true,
+    "outDir": "_site/app"
+}

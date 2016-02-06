@@ -43,4 +43,9 @@ tags:
     * Commands
         * http://jekyllrb.com/docs/plugins/#commands
         * Commands *have* to be wrapped in a gem that is added to the jekyll_plugins section
-        
+* Gulp
+    * https://cmatskas.com/setting-up-a-gulp-task-with-visual-studio-code/
+    * VS Command
+    * Watch file
+    * http://www.dotnetcodegeeks.com/2016/01/getting-visual-studio-code-ready-typescript-part-1-compiling-typescript-javascript.html
+    * 

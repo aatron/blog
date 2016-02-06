@@ -6,6 +6,7 @@ description: The news of my life should be greatly underreported.
 url: "http://aaronschaefer.com"
 github_username:  aatron
 markdown: redcarpet # kramdown doesn't seem to do code blocks very well but this one does
+source: src
 
 # Local port # when 'jekyll service' is executed 
 port: 4470
@@ -32,7 +33,6 @@ ie_tile_medium: /ietemplates/win_medium.png
 ie_tile_wide: /ietemplates/win_wide.png
 ie_tile_large: /ietemplates/win_large.png
 
-exclude: [Gemfile,LICENSE,README.md,LocalGems,gulpfile.js,tsconfig.js,scripts,node_modules,.gitignore,package.json]
 permalink: /blog/:year/:month/:day/:title/
 
 gems:

@@ -33,6 +33,7 @@ ie_tile_medium: /ietemplates/win_medium.png
 ie_tile_wide: /ietemplates/win_wide.png
 ie_tile_large: /ietemplates/win_large.png
 
+exclude: [app]
 permalink: /blog/:year/:month/:day/:title/
 
 gems:

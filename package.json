@@ -1,24 +1,32 @@
 {
   "name": "aaronschaefer",
   "version": "0.0.1",
+  "description": "The news of my life should be greatly underreported.",
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w"
   },
   "dependencies": {
     "angular2": "2.0.0-beta.3",
+    "browser-sync": "*",
     "del": "^2.1.0",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
     "gulp": "^3.9.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-inject": "^3.0.0",
     "gulp-sourcemaps": "*",
+    "gulp-tslint": "^4.2.1",
+    "gulp-tsd": "^0.0.4",
+    "tsd": "^0.6.5",
     "gulp-typescript": "^2.8.0",
     "gulp-watch": "*",
-    "browser-sync": "*",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.0",
+    "typescript": "*",
     "zone.js": "0.5.11",
-    "merge2": "*"
+    "merge2": "*",
+    "tslint": "^3.2.1"
   },
   "devDependencies": {
     "typescript": "^1.8.0"

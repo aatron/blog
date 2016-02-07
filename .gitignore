@@ -1,4 +1,11 @@
 _site/
 .sass-cache/
+.jekyll-metadata
 Gemfile.lock
+
 node_modules/
+!tools/typings
+tools/typings/*
+!tools/typings/tsd.d.ts
+!tools/typings/typescriptApp.d.ts
+**/bower_packages

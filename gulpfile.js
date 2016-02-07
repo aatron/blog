@@ -7,8 +7,7 @@ var gulp = require('gulp'),
     del = require('del'),
     Config = require('./gulpfile.config'),
     tsProject = tsc.createProject('tsconfig.json'),
-    browserSync = require('browser-sync'),
-    superstatic = require( 'superstatic' );
+    browserSync = require('browser-sync');
 
 var config = new Config();
 
@@ -71,7 +70,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('serve', ['compile-ts', 'watch'], function() {
-  process.stdout.write('Starting browserSync and superstatic...\n');
+  process.stdout.write('Starting browserSync...\n');
   browserSync({
     port: 3000,
     files: ['index.html', '**/*.js'],
@@ -80,11 +79,7 @@ gulp.task('serve', ['compile-ts', 'watch'], function() {
     logLevel: 'silent',
     logPrefix: 'angularin20typescript',
     notify: true,
-    reloadDelay: 0,
-    server: {
-      baseDir: './src',
-      middleware: superstatic({ debug: false})
-    }
+    reloadDelay: 0
   });
 });
 

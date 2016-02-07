@@ -1,17 +1,6 @@
 {
-  "compilerOptions": {
-    "outDir": "_site/app",
-    "target": "ES5",
-    "module": "system",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "removeComments": false,
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
-  },
-  "exclude": [
-    "node_modules"
-  ]
+    "compilerOptions": {
+        "target": "es5",
+        "sourceMap": true
+    }
 }

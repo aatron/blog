@@ -1,10 +1,11 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
+categories: navbar
 ---
 
-This site is a work in progress to create the perfect system.
+I'm a dude with a website.
 
 <div>
     <ul class="social-media-list">
@@ -24,6 +25,6 @@ This site is a work in progress to create the perfect system.
 
 <div>
     <ul class="contact-list">
-        <li>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li>Email: <label class="text-success">{{ site.email }}</label></li>
     </ul>
 </div>

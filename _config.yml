@@ -11,6 +11,10 @@ source: src
 # Local port # when 'jekyll service' is executed 
 port: 4470
 
+sass:
+    # sass_dir: /src/_sass
+    style: compressed
+
 # Paths for the tag pages
 tag_page_dir: /blog/tag
 tag_index_dir: /blog/tags
@@ -33,6 +37,7 @@ ie_tile_medium: /ietemplates/win_medium.png
 ie_tile_wide: /ietemplates/win_wide.png
 ie_tile_large: /ietemplates/win_large.png
 
+categories: [navbar]
 exclude: [app]
 permalink: /blog/:year/:month/:day/:title/
 

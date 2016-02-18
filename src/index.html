@@ -49,10 +49,10 @@ scene.add(plane);
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <p>I write code, use software tools, watch documentaries, and want to be a better writer. Hopefully I don't regress.</p>
+            <p>I write <a href="https://github.com/aatron">code</a>, use <a href="{{ 'softwaretools'' | prepend: site.baseurl }}">software tools</a>, watch <a href="{{ 'documentaries' | prepend: site.baseurl }}">documentaries</a>, and want to be a better writer. Hopefully I don't regress.</p>
         </div>
         <div class="col-xs-12 col-sm-6">
-            <label><a href="{{ "/feeds/blog.xml" | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a>Read these posts?</label>
+            <label><a href="{{ "/feeds/blog.xml" | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a>Read these posts</label>
 
             <ul class="post-list">
                 {% for post in site.posts %}
@@ -62,11 +62,11 @@ scene.add(plane);
                 </li>
                 {% endfor %}
             </ul>
-            <p class="rss-subscribe"><a href="{{ "/feeds/blog.xml" | prepend: site.baseurl }}">More...</a></p>
+            <p class="rss-subscribe"><a href="{{ 'blog' | prepend: site.baseurl }}">More...</a></p>
         </div>
   
         <div class="col-xs-12 col-sm-6">
-            <label><a href="{{ "/feeds/documentaries.xml" | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a>Seen these documentaries?</label>
+            <label><a href="{{ "/feeds/documentaries.xml" | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a>Watch these documentaries</label>
 
             <ul class="post-list">
                 {% for post in site.documentaries %}
@@ -76,7 +76,7 @@ scene.add(plane);
                 </li>
                 {% endfor %}
             </ul>
-            <p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}">Search...</a></p>
+            <p class="rss-subscribe"><a href="{{ 'documentaries' | prepend: site.baseurl }}">Search...</a></p>
          </div>
   </div>
 </div>

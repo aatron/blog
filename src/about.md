@@ -25,6 +25,6 @@ I'm a dude with a website.
 
 <div>
     <ul class="contact-list">
-        <li>Email: <label class="text-success">{{ site.email }}</label></li>
+        <li>Email: <label>{{ site.email }}</label></li>
     </ul>
 </div>

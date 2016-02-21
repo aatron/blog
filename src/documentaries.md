@@ -4,12 +4,17 @@ title: Documentaries
 permalink: /documentaries/
 ---
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.2/angular2.min.js" />
-
-
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+<script src="/js/app/app.module.js"></script>
+<script src="/js/app/controllers/documentaries.controller.js"></script>
+<script src="/js/app/services/data.service.js"></script>
+<script src="/js/app/directives/filterTextbox.directive.js"></script>
 
 <table>
-    <thead>
+    <thead>  
+        <th></th>
         <th>Title</th>
         <th>Recommendation</th>
         <th>Source</th>
@@ -17,14 +22,19 @@ permalink: /documentaries/
         <th>Watched?</th>
     </thead>
     <tbody>
-{% for doc in site.data.documentaries %}
+{% for doc in site.documentaries %}
         <tr>
+            <td>{{doc.date < Date.today - 30}}</td>
             <td>{{doc.title}}</td>
             <td>{{doc.recommendation}}</td>
-            <td>{{doc.source}}</td>
-            <td>{{doc.dateAdded}}</td>
+            <td>{{doc.sources.length}}</td>
+            <td>{{doc.date}}</td>
             <td><input type="checkbox" /></td>
         </tr>
 {% endfor %}
     </tbody>
 </table>
+
+<div ng-app="demoApp">
+ 
+</div>

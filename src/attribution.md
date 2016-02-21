@@ -10,7 +10,7 @@ Massive thanks to all of the people who provided these projects:
     * [Jekyll](http://jekyllrb.com/)
     * [Octopress](https://github.com/octopress/octopress)
     * [Jekyll-Sitemap](https://rubygems.org/gems/jekyll-sitemap)
-    * [wintiles](https://github.com/sheehamj13/mattsheehan.me)
+    * [wintiles](https://github.com/sheehamj13/jekyll-live-tiles)
     * [tag cloud](https://github.com/krig/jekyll-plugins/tree/master/_plugins)
 * Style
     * [Bootstrap](http://getbootstrap.com/)

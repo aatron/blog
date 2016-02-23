@@ -36,5 +36,9 @@ permalink: /documentaries/
 </table>
 
 <div ng-app="demoApp">
- 
+    <div ng-view class="slide-animation"></div>
+   
+    <ul>
+        <li ngFor="#doc of documentaries">{{doc.title}}</li>
+    </ul>
 </div>

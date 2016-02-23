@@ -1,20 +1,24 @@
 ((): void => {
-
     var app = angular.module('demoApp', ['ngRoute', 'ngAnimate']);
 
     app.config(['$routeProvider', ($routeProvider) => {
-        $routeProvider.when('/',
+        $routeProvider.when('/documentaries/',
         {
-            controller: 'demoApp.CustomersController',
-            templateUrl: 'app/views/customers.html',
+            controller: 'demoApp.DocumentariesController',
+            templateUrl: '/js/app/views/documentaries.html',
             controllerAs: 'vm'
         })
-        .when('/orders/:customerId',
+        .when('/documentaries',
         {
-            controller: 'demoApp.OrdersController',
-            templateUrl: 'app/views/orders.html',
+            controller: 'demoApp.DocumentariesController',
+            templateUrl: '/js/app/views/documentaries.html',
+            controllerAs: 'vm'
+        })
+        .when('/',
+        {
+            controller: 'demoApp.DocumentariesController',
+            templateUrl: '/js/app/views/documentaries.html',
             controllerAs: 'vm'
         });
     }]);
-
 })();

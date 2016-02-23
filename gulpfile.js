@@ -39,7 +39,11 @@ gulp.task('ts-lint', function () {
 gulp.task('compile-ts', function () {
     var sourceTsFiles = [config.allTypeScript,                //path to typescript files
                          config.libraryTypeScriptDefinitions]; //reference to library .d.ts files
-                        
+
+    gulp.src([
+        config.tsViews
+    ])
+    .pipe(gulp.dest(config.tsOutputPath + '/views'));
 
     var tsResult = gulp.src(sourceTsFiles)
                        .pipe(sourcemaps.init())
@@ -66,14 +70,14 @@ gulp.task('clean-ts', function (cb) {
 });
 
 gulp.task('watch', function() {
-    gulp.watch([config.allTypeScript], ['ts-lint', 'compile-ts']);
+    gulp.watch([config.allTypeScript, config.tsViews], ['ts-lint', 'compile-ts']);
 });
 
 gulp.task('serve', ['compile-ts', 'watch'], function() {
   process.stdout.write('Starting browserSync...\n');
   browserSync({
     port: 3000,
-    files: ['index.html', '**/*.js'],
+    files: ['index.html', '**/*.js', config.tsViews],
     injectChanges: true,
     logFileChanges: false,
     logLevel: 'silent',

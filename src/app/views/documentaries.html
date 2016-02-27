@@ -1,15 +1,14 @@
 <div>
-    <filter-textbox filter="vm.filter"></filter-textbox>
+    <div>Search by Name: <input type="text" ng-model="vm.filtersSearch"  ng-change="vm.updateArray()"></div>
     <br />
-    <h3>Customers:</h3>
+    <h3>Documentaries:</h3>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Name</th>
             </tr>
         </thead>
-        <tr ng-repeat="doc in vm.documentaries |  filter:vm.filter | orderBy:'title'">
-            <!--<td><a href="#/orders/{{ cust.id }}">{{ cust.name  }}</a></td>-->
+        <tr ng-repeat="doc in vm.documentaries |  filter:vm.filtersSearch">
             <td>{{ doc.title }}</td>
         </tr>
     </table>

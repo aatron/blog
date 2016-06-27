@@ -4,7 +4,7 @@ layout: null
 [{% for doc in site.documentaries %}
   {
     "title":  "{{ doc.title | xml_escape }}",
-    "tags": "{{ (doc.tags + doc.categories).join(",") }}",
+    "tags": [{% for tag in (doc.tags + doc.categories) %}"{{tag}}"{% if forloop.length > forloop.index %}, {% endif %}{% endfor %}],
     "dateAdded": "{{ doc.date | date_to_xmlschema }}",
     "recommendation": "{{doc.recommendation}}",
     "sources": [{% for source in doc.sources %}
@@ -13,6 +13,6 @@ layout: null
         "url": "{{source.url}}"  
       }{% if forloop.length > forloop.index %},{% endif %}{% endfor %}
     ],
-    "kidFriendly": "{% if kidFriendly == "" %}True{% else %}False{% endif %}"
+    "kidFriendly": {% if kidFriendly == "" %}true{% else %}false{% endif %}
   }{% if forloop.length > forloop.index %},{% endif %}{% endfor %}
 ]

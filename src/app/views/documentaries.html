@@ -1,15 +1,26 @@
 <div>
-    <div>Search by Name: <input type="text" ng-model="vm.filtersSearch"  ng-change="vm.updateArray()"></div>
+    <div>Search by Name:  <input type="text" ng-model="vm.filtersSearch"  ng-change="vm.updateArray()" ng-model-options="{debounce: 250}"></div>
+    <div>Kid Friendly?: <input type="checkbox" ng-model="vm.filtersKidFriendly" ng-change="vm.updateArray()"/>           
+    <div>Recommendation: <input type="checkbox" ng-model="vm.filtersRecommendation" ng-change="vm.updateArray()"/>           
     <br />
     <h3>Documentaries:</h3>
-    <table class="table table-striped">
+    <pre>
+        {{ vm.documentaries |  filter:vm.filtersSearch | limitTo:pageSize | json }}
+    </pre>
+    <!--<table class="table table-striped">
         <thead>
             <tr>
                 <th>Name</th>
             </tr>
         </thead>
-        <tr ng-repeat="doc in vm.documentaries |  filter:vm.filtersSearch">
-            <td>{{ doc.title }}</td>
+        <tr ng-repeat="doc in vm.documentaries |  filter:vm.filtersSearch | filter:{kidFriendly: vm.filtersCompany}">
+            <td>
+                <div class="{{doc.tags.length > 0 ? 'bold' : ''}}">
+                    {{ doc.title }}
+                    {{ doc.kidFriendly }}
+                     vm.tagsEmphasis(doc.tags) 
+                </div>
+            </td>
         </tr>
-    </table>
+    </table>-->
 </div>

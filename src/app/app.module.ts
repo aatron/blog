@@ -1,5 +1,6 @@
 ((): void => {
     var app = angular.module('demoApp', ['ngRoute', 'ngAnimate']);
+    var scrollModule = angular.module('myApp');
 
     app.config(['$routeProvider', ($routeProvider) => {
         $routeProvider.when('/documentaries/',

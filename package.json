@@ -1,36 +1,31 @@
 {
   "name": "aaronschaefer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The news of my life should be greatly underreported.",
   "contributors": [
     {
       "name": "Aaron Schaefer"
     }
   ],
-  "scripts": {
-    "start": "gulp serve",
-    "postinstall": "tsd reinstall -so && gulp"
-  },
   "license": "MIT",
   "dependencies": {
 
   },
   "devDependencies": {
-    "browser-sync": "^2.10.1",
     "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-debug": "^2.1.2",
-    "gulp-inject": "^3.0.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-tslint": "^4.2.1",
-    "gulp-typescript": "^2.10.0",
-    "gulp-tsd": "^0.0.4",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-typescript": "^2.13.6",
+    "gulp-uglify": "*",
+    "gulp-tslint": "*",
     "tsd": "^0.6.5",
-    "typescript": "^1.7.5",
-    "tslint": "^3.2.1",
-    "angular2": "2.0.0-beta.7",
-    "rxjs": "5.0.0-beta.2",
-    "zone.js": "0.5.15",
+    "typescript": "^1.8.10",
+    "tslint": "^3.12.1",
+    "systemjs": "0.19.31",
+    "rxjs": "5.0.0-beta.9",
+    "es6-shim": "0.33.3",
+    "zone.js": "^0.5.15",
     "ng-bootstrap": "1.0.0-beta.2"
   }
 }

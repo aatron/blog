@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Documentaries
-permalink: /documentaries/
+permalink: documentaries/
 ---
 
 <!--

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Attribution
-permalink: /attribution
+permalink: /attribution/
 ---
 
 Massive thanks to all of the people who provided these projects:

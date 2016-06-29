@@ -26,7 +26,7 @@ documentary_template: documentary
 collections:
   documentaries:
     output: true
-    permalink: /documentaries/:title
+    permalink: /documentary/:title.html
 
 # Windows 8 Tiles
 # ie_frequency: 1440 #1440 is default
@@ -39,7 +39,8 @@ ie_tile_large: /ietemplates/win_large.png
 categories: [navbar]
 exclude: [app]
 keep_files: [/js/app]
-permalink: /blog/:year/:month/:day/:title/
+permalink: blog/:year/:month/:day/:title/
+baseurl: /blog2
 
 gems:
   - jekyll-sitemap

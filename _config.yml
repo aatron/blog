@@ -40,7 +40,7 @@ categories: [navbar]
 exclude: [app]
 keep_files: [/js/app]
 permalink: blog/:year/:month/:day/:title/
-baseurl: /blog2
+baseurl: /
 
 gems:
   - jekyll-sitemap

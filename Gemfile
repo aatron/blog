@@ -5,8 +5,8 @@ gem 'redcarpet'
 gem 'jekyll-sitemap'
 gem 'builder'
 gem 'wdm'
-# gem 'newb'
 
-group :jekyll_plugins do
-    gem 'newb', :path => './LocalGems/newb'
-end
+# group :jekyll_plugins do
+#     gem 'hello', :path => './LocalGems/hello'
+#     # gem 'newdoc'
+# end

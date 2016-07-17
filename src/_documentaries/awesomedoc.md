@@ -1,9 +1,8 @@
 ---
-layout: {{ layout }}
-title: "{{ title }}"
-date: {{ date }}
 layout: documentary
-recommendation: "Yes|No|Maybe"
+title: "Awesome Documentary"
+date: 2016-07-16T20:42:30-07:00
+recommendation: "Yes"
 sources:
   - title: "Netflix"
     url: "http://netflix.com/something"
@@ -11,8 +10,6 @@ sources:
     url: "http://PBS.org/something"
   - title: "Hulu"
     url: "http://hulu.com/something"
-  - title: "TMDB"
-    url: "http://tmdb.org/something"
 tags:
   - Biography 
   - Economics
@@ -22,7 +19,6 @@ tags:
   - Prison
   - Rural
   - Social
-
   - Art
   - Clothes
   - Cooking
@@ -37,6 +33,6 @@ tags:
   - Slice of Life
   - Sports
   - Religion
-
   - Important
 ---
+

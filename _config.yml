@@ -21,12 +21,13 @@ tag_index_dir: /blog/tags
 
 # Documentary settings
 documentary_layout: 'documentary' 
-documentary_ext: markdown 
+documentary_ext: md 
 documentary_template: documentary
 collections:
   documentaries:
     output: true
     permalink: /documentary/:title.html
+    # layout: documentary
 
 # Windows 8 Tiles
 # ie_frequency: 1440 #1440 is default
@@ -40,7 +41,8 @@ categories: [navbar]
 exclude: [app]
 keep_files: [/js/app]
 permalink: blog/:year/:month/:day/:title/
-baseurl: /
+baseurl: http://localhost/blog
+# baseurl: http://aaronschaefer.com
 
 gems:
   - jekyll-sitemap

@@ -16,13 +16,15 @@ sass:
     style: compressed
 
 # Paths for the tag pages
-tag_page_dir: /blog/tag
-tag_index_dir: /blog/tags
+tag_page_dir: /blog/tag   # Used in _plugins/tags.rb
+tag_index_dir: /blog/tags # Used in _plugins/tags.rb
 
 # Documentary settings
 documentary_layout: 'documentary' 
-documentary_ext: md 
+documentary_ext: md
 documentary_template: documentary
+doc_tag_page_dir: /documentary/tag    # Used in _plugins/doctags.rb
+doc_tag_index_dir: /documentary/tags  # Used in _plugins/doctags.rb
 collections:
   documentaries:
     output: true

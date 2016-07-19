@@ -43,8 +43,9 @@ module Jekyll
         for page in site.documents
           if page["layout"] == 'documentary'
             for tag in page["tags"]
-              if !tagList.include? tag
-                tagList << tag
+              cleanTag = tag.gsub ' ', ''
+              if !tagList.include? cleanTag
+                tagList << cleanTag
               end
             end
           end
@@ -53,7 +54,7 @@ module Jekyll
         tagList.each do |tag|
           write_tag_page(site, File.join(dir, tag), tag)
         end
-      end 
+      end
     end
 
     private

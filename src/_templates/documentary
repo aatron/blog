@@ -4,6 +4,7 @@ title: "{{ title }}"
 date: {{ date }}
 layout: documentary
 recommendation: "Yes|No|Maybe"
+kidFriendly: "Yes|No"
 sources:
   - title: "Netflix"
     url: "http://netflix.com/something"
@@ -16,7 +17,6 @@ sources:
 tags:
   - Biography 
   - Economics
-  - Important
   - Politics
   - Poverty
   - Prison

@@ -2,8 +2,8 @@
 
 How to use:
 
-# Clone
-# bundle install
+# `Clone`
+# `bundle install`
 
 Create a page: `octopress new page awesomepage.md`
 

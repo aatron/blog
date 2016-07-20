@@ -2,7 +2,7 @@
 layout: {{ layout }}
 title: "{{ title }}"
 date: {{ date }}
-layout: documentary
+reviewAvailable: "Yes|No"
 recommendation: "Yes|No|Maybe"
 kidFriendly: "Yes|No"
 sources:
@@ -24,6 +24,7 @@ tags:
   - Social
 
   - Art
+  - Celebrity
   - Clothes
   - Cooking
   - Design

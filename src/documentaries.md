@@ -5,7 +5,7 @@ permalink: documentaries/
 ---
 
 {% assign alphabetArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | split: "" %}
-{% assign titles = site.documentaries | map: "title" %}
+{% assign titles = site.documentaries | map: "title" | sort %}
 
 <div class="container-fluid">
   <div class="row">
@@ -16,6 +16,7 @@ permalink: documentaries/
         {% for doc in titles %}
           {% assign titleLetters = doc | split: "" %}
           {% if newLetter == true %}
+            {% assign newLetter = false %}
             <li>{{letter}}</li>
           {% endif %}
           {% if letter == titleLetters[0] %}

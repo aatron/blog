@@ -5,24 +5,29 @@ permalink: documentaries/
 ---
 
 {% assign alphabetArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | split: "" %}
-{% assign titles = site.documentaries | map: "title" | sort %}
+{% assign docs = site.documentaries | sort: "title" %}
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12">    
+    <div class="col-md-12">
       <ul class="list-unstyled">
       {% for letter in alphabetArray  %}
         {% assign newLetter = true %}
-        {% for doc in titles %}
-          {% assign titleLetters = doc | split: "" %}
+        {% for doc in docs %}
+          {% assign titleLetters = doc.title | split: "" %}
           {% if newLetter == true %}
             {% assign newLetter = false %}
             <li>{{letter}}</li>
           {% endif %}
+          
           {% if letter == titleLetters[0] %}
-            <li>{{ doc }}</li>
+            {% if doc.reviewAvailable == "Yes" %}
+              <a class="post-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+            {% else %}
+              <li>{{ doc.title }}</li>
+            {% endif %}
           {% endif %}
-        {% endfor %}  
+        {% endfor %}
       {% endfor %}
       </ul>
     </div>

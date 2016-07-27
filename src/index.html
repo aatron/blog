@@ -11,7 +11,8 @@ layout: default
             <label><a href="{{ /feeds/blog.xml | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a>Read these posts</label>
 
             <ul class="post-list">
-                {% for post in site.posts %}
+                {% assign sortedPosts = site.posts | sort "date" | reverse %}
+                {% for post in sortedPosts | limit:10 %}
                 <li>
                     <time datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date: "%b %-d, %Y" }}</time>
                     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -25,14 +26,15 @@ layout: default
             <label><a href="{{ /feeds/documentaries.xml | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a>Watch these documentaries</label>
 
             <ul class="post-list">
-                {% for post in site.documentaries %}
+                {% assign sortedDocs = site.documentaries | sort "date" | reverse %}
+                {% for doc in sortedDocs | limit:10 %}
                 <li>
-                    <time datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date: "%b %-d, %Y" }}</time>
-                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                    <time datetime="{{ doc.date | date_to_xmlschema }}" pubdate>{{ doc.date | date: "%b %-d, %Y" }}</time>
+                    <a class="doc-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
                 </li>
                 {% endfor %}
             </ul>
-            <p class="rss-subscribe"><a href="{{ '/documentaries' | prepend: site.baseurl }}">Search...</a></p>
+            <p class="rss-subscribe"><a href="{{ '/documentaries' | prepend: site.baseurl }}">More...</a></p>
          </div>
   </div>
 </div>

@@ -6,7 +6,7 @@ permalink: documentaries/
 
 {% assign numberArray = "0123456789" | split: "" %}
 {% assign alphabetArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | split: "" %}
-{% assign docs = site.documentaries | sort: "title" %}
+{% assign docs = site.documentaries | sort: "date" %}
 
 <div class="container-fluid">
   <div class="row">

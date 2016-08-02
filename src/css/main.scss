@@ -47,12 +47,7 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "bootstrap-custom-variables",
-        "base",
-        "layout",
-        "bootswatch/theme/darkly/variables",
-        "bootstrap",
-        "bootswatch/theme/darkly/bootswatch",
-        "syntax-highlighting",
-        "aatron"
+        "solarized-colors",
+        "solarized-layout",
+        "solarized-colors-light"
 ;

@@ -4,7 +4,7 @@ layout: null
 [{% for doc in site.documentaries %}
   {
     "title":  "{{ doc.title | xml_escape }}",
-    "tags": [{% for tag in (doc.tags + doc.categories) %}"{{tag}}"{% if forloop.length > forloop.index %}, {% endif %}{% endfor %}],
+    "tags": [{% for tag in doc.tags %}"{{tag}}"{% if forloop.length > forloop.index %}, {% endif %}{% endfor %}],
     "dateAdded": "{{ doc.date | date_to_xmlschema }}",
     "recommendation": "{{doc.recommendation}}",
     "sources": [{% for source in doc.sources %}

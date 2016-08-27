@@ -11,8 +11,8 @@ layout: null
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% assign sortedPosts = site.documentaries | sort "date" | reverse %}
-    {% for post in sortedPosts limit:20 %}
+    {% assign docs = site.documentaries | sort: date | reverse | limit:20 %}
+    {% for post in docs %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>{{ post.content | xml_escape }}</description>

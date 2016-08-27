@@ -15,20 +15,19 @@ permalink: documentaries/
         <div class="list-group-background">#</div>
         <ul class="list-unstyled">
         {% for letter in numberArray %}
-          {% for doc in docs %}
+          {% for doc in docs  %}
             {% assign titleLetters = doc.title | split: "" %}
             {% if letter == titleLetters[0] %}
               {% if doc.reviewAvailable == "Yes" %}
-                <a class="post-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+                {% if doc.recommendation != 'Yes' %}<s>{% endif %}<a class="post-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>{% if doc.recommendation != 'Yes' %}</s>{% endif %}
               {% else %}
-                <li>{{ doc.title }}</li>
+                <li>{% if doc.recommendation != 'Yes' %}<s>{% endif %}{{ doc.title }}{% if doc.recommendation != 'Yes' %}</s>{% endif %}</li>
               {% endif %}
             {% endif %}
           {% endfor %}
         {% endfor %}
         </ul>
       </div>
-
       {% for letter in alphabetArray  %}
       <div class="list-group">
         <div class="list-group-background">{{ letter }}</div>
@@ -39,12 +38,12 @@ permalink: documentaries/
             {% if newLetter == true %}
               {% assign newLetter = false %}
             {% endif %}
-            
+
             {% if letter == titleLetters[0] %}
               {% if doc.reviewAvailable == "Yes" %}
-                <a class="post-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+                {% if doc.recommendation != 'Yes' %}<s>{% endif %}<a class="post-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>{% if doc.recommendation != 'Yes' %}</s>{% endif %}
               {% else %}
-                <li>{{ doc.title }}</li>
+                <li>{% if doc.recommendation != 'Yes' %}<s>{% endif %}{{ doc.title }}{% if doc.recommendation != 'Yes' %}</s>{% endif %}</li>
               {% endif %}
             {% endif %}
           {% endfor %}

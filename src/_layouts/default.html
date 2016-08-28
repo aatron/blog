@@ -1,43 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head>
-
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width">
-
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-  <!--<link href="{{site.baseurl}}/assets/css/style.css" rel="stylesheet" />-->
-  <!--<link href="{{site.baseurl}}/assets/css/colors-light.css" rel="stylesheet" />-->
-  <link href="{{site.baseurl}}/css/main.css" rel="stylesheet" />
-</head>
-
+<html lang="en">
+  {% include head.html %}
 <body>
-  <header id="header">
-    <h1><a href="/">{{ site.title }}</a></h1>
-    <p>{{ site.description }}</p>
-  </header>
-  <div id="page">
-    <div id="sidebar">
-      <nav>
-        <ul>
-          <li><a href="{{'/' | prepend: site.baseurl}}/">Home</a></li>
-          <li><a href="{{'/blog' | prepend: site.baseurl}}">Blog Posts</a></li>
-          <li><a href="{{'/documentaries' | prepend: site.baseurl}}">Documentaries</a></li>
-          <li><a href="{{'/about' | prepend: site.baseurl}}">About Me</a></li>
-        </ul>
-        <hr />
-        <ul>
-          <li><a class="rss" href="{{ '/feeds/blog.xml' | prepend: site.baseurl}}">Blog Posts</a></li>
-          <li><a class="rss" href="{{ '/feeds/documentaries.xml' | prepend: site.baseurl}}">Documentaries</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div id="content">
-      {{ content }}
+  <!--<header id="header">
+  </header>-->
+    <!--<h1><a href="/">{{ site.title }}</a></h1>
+    <p>{{ site.description }}</p>-->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2 col-md-2">
+        <div class="">
+          <nav>
+            <ul>
+              <li><a href="{{'/' | prepend: site.baseurl}}/">Home</a></li>
+              <li><a href="{{'/blog' | prepend: site.baseurl}}">Blog Posts</a><a class="rss" href="{{ '/feeds/blog.xml' | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a></li>
+              <li><a href="{{'/documentaries' | prepend: site.baseurl}}">Documentaries</a><a class="rss" href="{{ '/feeds/blog.xml' | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a></li>
+              <li><a href="{{'/about' | prepend: site.baseurl}}">About Me</a></li>
+            </ul>
+            <!--<hr />
+            <ul>
+              
+              <li><a class="rss" href="{{ '/feeds/blog.xml' | prepend: site.baseurl}}">Blog Posts</a><i class="fa fa-rss" aria-hidden="true"></i></li>
+              <li><a class="rss" href="{{ '/feeds/documentaries.xml' | prepend: site.baseurl}}">Documentaries</a></li>
+            </ul>-->
+          </nav>
+        </div>
+      </div>
+      <div class="col-sm-8 col-md-8 ">
+        {{ content }}
+      </div>
+      <div class="col-sm-2 col-md-2">
+      </div>
     </div>
   </div>
 {% include footer.html %}

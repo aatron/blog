@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: minimal
 title: "Blog Posts"
 permalink: /blog/
 ---
@@ -12,5 +12,5 @@ permalink: /blog/
         {% assign currentYear = postYear %}
     {% endif %}
 
-* <time class="list-date" datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date: "%B %d" }}</time>[{{ post.title | xml_escape }}]({{ post.url | prepend: site.baseurl | prepend: site.url }})
+* <time class="list-date" datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date: "%B %d - " }}</time>[{{ post.title | xml_escape }}]({{ post.url | prepend: site.baseurl }})
 {% endfor %}

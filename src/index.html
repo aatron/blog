@@ -4,24 +4,36 @@ layout: default
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12 blog">
-            <p>I write <a href="https://github.com/aatron">code</a>, use <a href="{{ '/softwaretools' | prepend: site.baseurl }}">software tools</a>, watch <a href="{{ '/documentaries' | prepend: site.baseurl }}">documentaries</a>, and want to be a better writer. Hopefully I don't regress.</p>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-md-6 blog">
-            <label><a href="{{ '/feeds/blog.xml' | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a>Read these posts</label>
+            <label><a class="rss" href="{{ '/feeds/blog.xml' | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a>Latest posts</label>
 
-
+            <ul class="post-list">
+                {% assign sortedPosts = site.posts | sort "date" | reverse | limit:10 %}
+                {% for post in sortedPosts %}
+                <li>
+                    <time datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date: "%b %-d, %Y" }}</time>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
             <p class="rss-subscribe"><a href="{{ '/blog' | prepend: site.baseurl }}">More...</a></p>
         </div>
   
         <div class="col-md-6 blog">
-            <label><a href="{{ '/feeds/documentaries.xml' | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a>Watch these documentaries</label>
+            <label><a class="rss" href="{{ '/feeds/documentaries.xml' | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a>Latest documentaries</label>
 
+            <ul class="post-list">
+                {% assign sortedDocs = site.documentaries | sort "date" | reverse | limit:10 %}
+                {% for doc in sortedDocs %}
+                <li>
+                    <time datetime="{{ doc.date | date_to_xmlschema }}" pubdate>{{ doc.date | date: "%b %-d, %Y" }}</time>
+                    <a class="doc-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
             <p class="rss-subscribe"><a href="{{ '/documentaries' | prepend: site.baseurl }}">More...</a></p>
          </div>
-  </div>
+    </div>
 </div>
 
 <!--<div>

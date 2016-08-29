@@ -19,7 +19,7 @@ h1, h2, h3 {
 }
 
 h1 a, h1 a:visited, h1 a:active {
-	color: $orange;
+	color: $blue;
 }
 
 h1 a:hover {
@@ -45,6 +45,15 @@ blockquote {
 	border-color: $base02;
 }
 
+hr {
+	border-color: $blue;
+	margin: 0px 0px 18px 0px;
+	width: 80%;
+}
+
+.rss {
+	color: $yellow;
+}
 
 
 /*** Pygments ***/

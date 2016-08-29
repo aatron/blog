@@ -1,3 +1,26 @@
+// .container-fluid > .sidebar {
+//     position: relative;
+//     top: 0;
+//     left:auto;
+//     width: 220px; /* width of sidebar */
+// }
+
+// .left {
+//     float:left;
+// }
+
+// .right {
+//     float:right;
+// }
+
+// .container-fluid > .content {
+//     margin: 0 240px; /* width of sidebars + 10px of margin */
+// }
+
+// .sidebar-nav-fixed {
+// 	width:14%;
+// }
+
 
 // .navbar-toggle {
 //   position: relative;
@@ -34,25 +57,25 @@
 
 
 
-// .list-group {
-//     position: relative;
-//     min-height: 200px;
-//     margin: 0px 0px 10px 0px;
-// }
-
-// .list-group-background {
-//     z-index: -1;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     margin: 35px 35px 35px 24px;
-//     border: 0;
-//     font-size: 200px;
-//     opacity: 0.25;
-//     vertical-align: top;
-//     line-height: 100px;
-// }
-
-header, nav {
-    text-align: center;
+.list-group {
+    position: relative;
+    min-height: 45px;
+    margin: 0px 0px 10px 0px;
 }
+
+    // z-index: -1;
+.list-group-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    font-size: 50px;
+    opacity: 0.25;
+    vertical-align: top;
+    line-height: 100px;
+    margin: 24px 0px 0px -5px;
+}
+
+// header, nav {
+//     text-align: center;
+// }

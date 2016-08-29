@@ -1,0 +1,15 @@
+{% assign docs = site.documentaries | sort: "title" %}
+<div class="list-group">
+    <div class="list-group-background">{{ include.letter }}</div>
+    <ul class="list-unstyled">
+        {% for aDoc in docs  %}
+            {% assign x = aDoc.title | upcase | split: "" %}
+            {% assign y = x[0] %}
+            {% if include.letter == y %}
+                <li>{{ aDoc.title }}</li>
+                {% break %}  
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+

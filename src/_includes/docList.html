@@ -2,11 +2,26 @@
 <div class="list-group">
     <div class="list-group-background">{{ include.letter }}</div>
     <ul class="list-unstyled">
-        {% for aDoc in docs  %}
-            {% assign x = aDoc.title | upcase | split: "" %}
-            {% assign y = x[0] %}
-            {% if include.letter == y %}
-                <li>{{ aDoc.title }}</li>
+        {% for doc in docs  %}
+            {% assign letterArray = doc.title | upcase | split: "" %}
+            {% assign firstLetter = letterArray[0] %}
+            {% if include.letter == firstLetter %}
+                <li class="list-item">
+                    {{firstLetter}}
+                    {% if doc.reviewAvailable == "Yes" %}
+                        {% if doc.recommendation != 'Yes' %}
+                            <s><a class="list-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a></s>
+                        {% else %}
+                            <a class="list-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+                        {% endif %}
+                    {% else %}
+                        {% if doc.recommendation != 'Yes' %}
+                            <s>{{ doc.title }}</s>
+                        {% else %}
+                            {{ doc.title }}
+                        {% endif %}
+                    {% endif %}
+                </li>
                 {% break %}  
             {% endif %}
         {% endfor %}

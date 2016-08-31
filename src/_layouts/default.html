@@ -8,13 +8,18 @@
     </div>
     <div class="row">
       <div class="col-sm-3 col-md-3">
-        <div id="sidebar">
+        <div class="sidebar">
           <nav>
             <ul>
               <li><a href="{{'/' | prepend: site.baseurl}}/">Home</a></li>
-              <li><a href="{{'/blog' | prepend: site.baseurl}}">Blog Posts</a><a class="rss" href="{{ '/feeds/blog.xml' | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a></li>
-              <li><a href="{{'/documentaries' | prepend: site.baseurl}}">Documentaries</a><a class="rss" href="{{ '/feeds/blog.xml' | prepend: site.baseurl }}"><i class="fa fa-rss rss-header"></i></a></li>
+              <li><a href="{{'/blog' | prepend: site.baseurl}}">Blog Posts</a></li>
+              <li><a href="{{'/documentaries' | prepend: site.baseurl}}">Documentaries</a></li>
               <li><a href="{{'/about' | prepend: site.baseurl}}">About Me</a></li>
+            </ul>
+            <hr class="color-base0" />
+            <ul>
+              <li><a href="{{'/blog' | prepend: site.baseurl}}" class="rss-text">Blog Posts<i class="fa fa-rss rss-icon"></i></a></li>
+              <li><a href="{{'/documentaries' | prepend: site.baseurl}}" class="rss-text">Documentaries<i class="fa fa-rss rss-icon"></i></a></li>
             </ul>
           </nav>
         </div>

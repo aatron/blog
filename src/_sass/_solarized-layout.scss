@@ -141,18 +141,18 @@ h3 {
 
 	// position: absolute;
 	// width: 160px;
-#sidebar {
+.sidebar {
 	text-align: right;
 	top: 0;
 	left: -240px;
 }
 
-#sidebar li {
+.sidebar li {
 	list-style: none;
 	margin: 2px 0;
 }
 
-#sidebar a {
+.sidebar a {
 	border: none;
 	font-family: "Helvetica Neue", "Helvetica", serif;
 	font-size: 1.2em;

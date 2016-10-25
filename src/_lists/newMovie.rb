@@ -34,11 +34,11 @@ title = gets.gsub(/\n/,'')
 # Tags
 selectedTags = getFormattedTags(movieTagDisplayTable, movieTagListFlat)
 
-# Recommendation
-puts 'Enter Recommendation: '
-recommendationOptions = ['Yes','No','Maybe','Need to Finish', 'Haven''t Seen'] 
-displayInputOptions(recommendationOptions)
-recommendationNumber = gets.gsub(/\n/,'1') 
+# Recommend
+puts 'Enter Recommend: '
+recommendOptions = ['Yes','No','Maybe','Need to Finish', 'Haven''t Seen'] 
+displayInputOptions(recommendOptions)
+recommendNumber = gets.gsub(/\n/,'1') 
 
 # Source
 puts 'Enter Source: '
@@ -50,7 +50,7 @@ newMovie = {
     :title => title,
     :tags => selectedTags,
     :dateAdded => Time.now,
-    :recommendation => recommendationOptions[recommendationNumber.to_i - 1],
+    :recommend => recommendOptions[recommendNumber.to_i - 1],
     :source => sourceOptions[sourceNumber.to_i - 1],
     :notes => ''
 }

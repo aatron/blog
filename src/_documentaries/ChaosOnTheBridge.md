@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: documentary
 title: "Chaos on the Bridge"
 date: 2016-07-19T22:50:53-07:00
 reviewAvailable: "Yes"
-recommendation: "Yes"
+recommend: "Yes"
 kidFriendly: "No"
 sources:
   - title: "Netflix"

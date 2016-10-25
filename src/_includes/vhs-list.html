@@ -1,0 +1,23 @@
+<div class="vhs-top ">
+    <div class="row vhs-top__content ">
+        <div class="vhs-top__content__reel-left col-xs-3">
+        <div class="vhs-top__content__reel-left_tape">
+            <div class="vhs-spool"></div>
+            <div class="vhs-spool-gap vhs-spool-gap-left"></div>
+        </div>
+        </div>
+        <span class="vhs-top__content__label col-xs-6">Tags</span>
+        <div class="vhs-top__content__reel-right col-xs-3">
+        <div class="vhs-top__content__reel-right_tape">
+            <div class="vhs-spool"></div>
+            <div class="vhs-spool-gap vhs-spool-gap-right"></div>
+        </div>
+        </div>
+    </div>
+</div>
+<ul class="vhs-tapes">
+    {% include vhs.html text="Really really long text" %}
+    {% include vhs.html text="Medium text" %}
+    {% include vhs.html text="Terse" %}
+    {% include vhs.html text="Visual Studio 2012" %}
+</ul>

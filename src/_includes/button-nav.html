@@ -1,0 +1,11 @@
+<div class="nav__button">
+	<label class="nav__button__label">{{ include.label }}</label>
+	{% assign urlStart = include.url | slice: 0,4 %}
+	
+	{% if urlStart == "http"  %}
+		<a href="{{include.url}}" class="nav__button__link {{ include.classes }}" >
+	{% else %}
+		<a href="{{'/' | prepend: site.baseurl}}{{include.url}}" class="nav__button__link {{ include.classes }}" >
+	{% endif %}
+	</a>
+</div>

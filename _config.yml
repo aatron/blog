@@ -5,7 +5,8 @@ email: yo [at] aaronschaefer [dot] com
 description: The news of my life should be greatly underreported.
 url: "http://aaronschaefer.com"
 github_username:  aatron
-markdown: redcarpet # kramdown doesn't seem to do code blocks very well but this one does
+#markdown: kramdown   # Default Value
+#highlighter: rouge   # Default Value
 source: src
 destination: _site
 
@@ -17,6 +18,7 @@ sass:
     style: compressed
 
 # Paths for the tag pages
+tag_page: yes
 tag_page_dir: /blog/tag   # Used in _plugins/tags.rb
 tag_index_dir: /blog/tags # Used in _plugins/tags.rb
 
@@ -24,8 +26,10 @@ tag_index_dir: /blog/tags # Used in _plugins/tags.rb
 documentary_layout: 'documentary' 
 documentary_ext: md
 documentary_template: documentary
+doc_tag_page: yes
 doc_tag_page_dir: /documentary/tag    # Used in _plugins/doctags.rb
 doc_tag_index_dir: /documentary/tags  # Used in _plugins/doctags.rb
+doc_index_dir: /documentary  # 
 collections:
   documentaries:
     output: true

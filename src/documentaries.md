@@ -8,11 +8,21 @@ permalink: documentaries/
 {% assign alphabetArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | split: "" %}
 {% assign docs = site.documentaries | sort: "title" %}
 
-  <div class="row">
-      {% assign emptyLetter = "" %}
-      {% assign sweetLetter = aDoc.first.title | truncate:1,"" %}
-      {% for alphaLetter in alphabetArray  %}
-          {% include docList.html letter=alphaLetter %}
-      {% endfor %}
-    
-  </div>
+<div class="row">
+    <div class="list-group-doc">
+        <div class="list-group">
+            <div class="list-group-background">#</div>
+        </div>
+        {% for number in numberArray  %}
+            {% include docList.html letter=number %}
+        {% endfor %}
+    </div>
+    {% for alphaLetter in alphabetArray  %}
+        <div class="list-group-doc">
+            <div class="list-group">
+                <div class="list-group-background">{{ alphaLetter }}</div>
+            </div>
+            {% include docList.html letter=alphaLetter %}
+        </div>
+    {% endfor %}
+</div>

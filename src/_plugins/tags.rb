@@ -5,7 +5,7 @@ module Jekyll
       @site = site
       @base = base
       @dir = dir
-      @name = 'index.html'
+      @name = 'index.html' 
       self.process @name
       self.read_yaml File.join(base, '_layouts'), layout_page
     end

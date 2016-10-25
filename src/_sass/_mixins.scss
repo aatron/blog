@@ -1,0 +1,75 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin border-top-left-radius($radius) {
+  -webkit-border-top-left-radius: $radius;
+     -moz-border-top-left-radius: $radius;
+      -ms-border-top-left-radius: $radius;
+          border-top-left-radius: $radius;
+}
+
+@mixin border-top-right-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+     -moz-border-top-right-radius: $radius;
+      -ms-border-top-right-radius: $radius;
+          border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+     -moz-border-bottom-left-radius: $radius;
+      -ms-border-bottom-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+}
+
+@mixin border-bottom-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+     -moz-border-bottom-right-radius: $radius;
+      -ms-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+}
+
+@mixin border-top-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-top-left-radius($radius);
+}
+
+@mixin border-bottom-radius($radius) {
+  @include border-bottom-right-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+
+@mixin border-left-radius($radius) {
+  @include border-top-left-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+
+@mixin border-right-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-bottom-right-radius($radius);
+}
+
+@mixin transform-rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+      -ms-box-shadow: $value;
+          box-shadow: $value;
+}
+
+@mixin box-shadow($value1, $value2: null) {
+  -webkit-box-shadow: $value1, $value2;
+     -moz-box-shadow: $value1, $value2;
+      -ms-box-shadow: $value1, $value2;
+          box-shadow: $value1, $value2;
+}

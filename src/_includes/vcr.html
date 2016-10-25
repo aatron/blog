@@ -1,0 +1,55 @@
+<div class="vcr-wrapper">
+    <div class="vcr-back">
+        <div class="vcr-back__top-big"></div>
+        <div class="vcr-back__top-small"></div>
+    </div>
+    <div class="vcr">
+        <div class="vcr-main">
+            <div class="vcr-center">
+                <div class="vcr-door2">
+                    <div class="vcr-door2__top">
+                        <div class="vcr-door2__panel-long"></div>
+                    </div>
+                    <div class="vcr-door2__bottom">
+                        <div class="vcr-door2__panel-long"></div>
+                    </div>
+                    <div class="vcr-door2__right">
+                        <div class="vcr-door2__panel-short"></div>
+                    </div>
+                    <div class="vcr-door2__left">
+                        <div class="vcr-door2__panel-short"></div>
+                    </div>
+                </div>
+                <div class="vcr-display-wrapper">
+                    <div class="vcr-power">
+                        <button class="remote__power__button" data-toggle="modal" data-target="#remoteModal">
+                            {% include icons/power.html %}
+                        </button>
+                    </div>
+                    <div class="vcr-display vcr-display-in-vcr">
+                        {% if page.tag != nil %}
+                            <div>{{ page.tag }}</div>
+                        {% else %}
+                            <div>{{ page.title }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vcr-legs"></div>
+    </div>
+</div>
+<div class="row">
+        <div class="vcr-power-display ">
+            <button class="remote__power__button" data-toggle="modal" data-target="#remoteModal">
+                {% include icons/power.html %}
+            </button>
+        </div>
+    <div class="vcr-display-only ">
+        {% if page.tag != nil %}
+            <div>{{ page.tag }}</div>
+        {% else %}
+            <div>{{ page.title }}</div>
+        {% endif %}
+    </div>
+</div>

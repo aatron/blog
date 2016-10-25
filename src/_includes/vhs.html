@@ -1,0 +1,83 @@
+{% if page.tags != nil && tagCount > 0 %}
+    {% assign tagCount = (page.tags | size) %}
+    {% if tagCount > 0 %}
+<div class="vhs-top ">
+    <div class="row vhs-top__content ">
+        <div class="vhs-top__content__reel-left col-xs-3">
+        <div class="vhs-top__content__reel-left_tape">
+            <div class="vhs-spool"></div>
+            <div class="vhs-spool-gap vhs-spool-gap-left"></div>
+        </div>
+        </div>
+        <span class="vhs-top__content__label col-xs-6">Tags</span>
+        <div class="vhs-top__content__reel-right col-xs-3">
+        <div class="vhs-top__content__reel-right_tape">
+            <div class="vhs-spool"></div>
+            <div class="vhs-spool-gap vhs-spool-gap-right"></div>
+        </div>
+        </div>
+    </div>
+</div>
+<ul class="vhs-tapes">
+    <li class="vhs row">
+    <!--<div class="row">-->
+        <!--<div class="vhs__top">
+
+        </div>
+        <div class="vhs__middle">
+            
+        </div>-->
+        <div class="vhs__info col-xs-2">
+            <span class="vhs__info__small">SEE MORE</span>
+            <span class="vhs__info__big">TAGS</span>
+            <div class="vhs__tab"></div>
+        </div>
+        <div class="vhs__indent col-xs-10">
+            <div class="vhs-label">
+                {% assign lastTag = (page.tags | last) %}
+                {% if page.recommend != nil %}
+                    {% if page.recommend != "Yes" %}
+                        <a class="vhs-label-tag font-strike" href="{{ site.doc_index_dir | prepend: site.baseurl }}/avoid">Recommend,</a>
+                    {% else %}
+                        <a class="vhs-label-tag" href="{{ site.doc_index_dir | prepend: site.baseurl }}/recommend">Recommend,</a>
+                    {% endif %}
+                {% endif %}
+                {% if page.kidFriendly != nil %}
+                    {% if page.kidFriendly != "Yes" %}
+                        <a class="vhs-label-tag font-strike" href="{{ site.doc_index_dir | prepend: site.baseurl }}/notkidfriendly">Kid Friendly,</a>
+                    {% else %}
+                        <a class="vhs-label-tag" href="{{ site.doc_index_dir | prepend: site.baseurl }}/kidfriendly">Kid Friendly,</a>
+                    {% endif %}
+                {% endif %}
+                {% for tag in page.tags %}
+                    <a class="vhs-label-tag" href="{{ include.dir | prepend: site.baseurl }}/{{tag}}">{{tag}}{% if tag != lastTag %},{% endif %}</a>
+                {% endfor %}
+            </div>
+            <div class="vhs__indent__top">
+                
+            </div>
+            <div class="vhs__indent__middle">
+                
+            </div>
+            <div class="vhs__indent__bottom">
+
+            </div>
+        </div>
+        <div class="vhs__bottom">
+            
+        </div>
+    <!--</div>-->
+</li>
+<!--<li>
+    <div class="vhs">
+        <span class="vhs-label">Medium tag</span>
+    </div>
+</li>
+<li>
+    <div class="vhs">
+        <span class="vhs-label">Terse</span>
+    </div>
+</li>-->
+</ul>
+    {% endif %}
+{% endif %}

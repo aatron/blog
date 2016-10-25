@@ -9,7 +9,6 @@ a, a:visited, a:active {
 }
 
 a:hover {
-	background-color: $base2;
 	border-color: $base2;
 	color: $cyan;
 }
@@ -37,7 +36,6 @@ blockquote {
 
 #sidebar a:hover {
 	color: $cyan;
-	background-color: $base2;
 }
 
 #footer {
@@ -55,4 +53,73 @@ blockquote {
     overflow: auto;
     padding: 6px 10px;
 }
-.highlight .c { color: $base01 } .highlight .err { color: $base1 } .highlight .g { color: $base1 } .highlight .k { color: $green } .highlight .l { color: $base1 } .highlight .n { color: $base1 } .highlight .o { color: $green } .highlight .x { color: $orange } .highlight .p { color: $base1 } .highlight .cm { color: $base01 } .highlight .cp { color: $green } .highlight .c1 { color: $base01 } .highlight .cs { color: $green } .highlight .gd { color: $cyan } .highlight .ge { color: $base1; font-style: italic } .highlight .gr { color: $red } .highlight .gh { color: $orange } .highlight .gi { color: $green } .highlight .go { color: $base1 } .highlight .gp { color: $base1 } .highlight .gs { color: $base1; font-weight: bold } .highlight .gu { color: $orange } .highlight .gt { color: $base1 } .highlight .kc { color: $orange } .highlight .kd { color: $blue } .highlight .kn { color: $green } .highlight .kp { color: $green } .highlight .kr { color: $blue } .highlight .kt { color: $red } .highlight .ld { color: $base1 } .highlight .m { color: $cyan } .highlight .s { color: $cyan } .highlight .na { color: $base1 } .highlight .nb { color: $yellow } .highlight .nc { color: $blue } .highlight .no { color: $orange } .highlight .nd { color: $blue } .highlight .ni { color: $orange } .highlight .ne { color: $orange } .highlight .nf { color: $blue } .highlight .nl { color: $base1 } .highlight .nn { color: $base1 } .highlight .nx { color: $base1 } .highlight .py { color: $base1 } .highlight .nt { color: $blue } .highlight .nv { color: $blue } .highlight .ow { color: $green } .highlight .w { color: $base1 } .highlight .mf { color: $cyan } .highlight .mh { color: $cyan } .highlight .mi { color: $cyan } .highlight .mo { color: $cyan } .highlight .sb { color: $base01 } .highlight .sc { color: $cyan } .highlight .sd { color: $base1 } .highlight .s2 { color: $cyan } .highlight .se { color: $orange } .highlight .sh { color: $base1 } .highlight .si { color: $cyan } .highlight .sx { color: $cyan } .highlight .sr { color: $red } .highlight .s1 { color: $cyan } .highlight .ss { color: $cyan } .highlight .bp { color: $blue } .highlight .vc { color: $blue } .highlight .vg { color: $blue } .highlight .vi { color: $blue } .highlight .il { color: $cyan } 
+	.highlight .c { color: $base01 } 						// Comment
+	.highlight .cm { color: $base01 } 						// Comment.Multiline
+	.highlight .cp { color: $green } 						// Comment.Preproc
+	.highlight .c1 { color: $base01 } 						// Comment.Single 
+	.highlight .cs { color: $green } 						// Comment.Special 
+	.highlight .err { color: $base1 } 						// Error
+	.highlight .k { color: $green } 						// Keyword
+	.highlight .o { color: $green } 						// Operator
+	.highlight .p { color: $base1 } 						// ?????
+	.highlight .ow { color: $green } 						// Operator.Word
+	.highlight .g { color: $base1 } 						// Generic????
+	.highlight .gd { color: $cyan } 						// Generic.Deleted
+// Missing 													// Generic.Deleted.Specific
+	.highlight .ge { color: $base1; font-style: italic }  	// Generic.Emph
+	.highlight .gr { color: $red } 							// Generic.Error
+	.highlight .gh { color: $orange } 						// Generic.Heading
+	.highlight .gi { color: $green } 						// Generic.Inserted
+// Missing 													// Generic.Inserted.Specific
+	.highlight .go { color: $base1 } 						// Generic.Output
+	.highlight .gp { color: $base1 } 						// Generic.Prompt
+	.highlight .gs { color: $base1; font-weight: bold } 	// Generic.Strong
+	.highlight .gu { color: $orange } 						// Generic.Subheading
+	.highlight .gt { color: $base1 } 						// Generic.Traceback
+	.highlight .kc { color: $orange } 						// Keyword.Constant
+	.highlight .kd { color: $blue } 						// Keyword.Declaration
+	.highlight .kp { color: $green } 						// Keyword.Pseudo
+	.highlight .kr { color: $blue } 						// Keyword.Reserved
+	.highlight .kt { color: $red } 							// Keyword.Type
+	.highlight .kn { color: $green } 						// ???????
+	.highlight .n { color: $base1 } 						// Name
+	.highlight .na { color: $base1 } 						// Name.Attribute
+	.highlight .nb { color: $yellow } 						// Name.Builtin
+	.highlight .nc { color: $blue } 						// Name.Class
+	.highlight .no { color: $orange } 						// Name.Constant
+	.highlight .ni { color: $orange } 						// Name.Entity
+	.highlight .nl { color: $base1 } 						// ????
+	.highlight .ne { color: $orange } 						// Name.Exception
+	.highlight .nf { color: $blue } 						// Name.Function
+	.highlight .nn { color: $base1 } 						// Name.Namespace
+	.highlight .nt { color: $blue } 						// Name.Tag
+	.highlight .nx { color: $base1 } 						// Name.Variable
+	.highlight .nd { color: $blue } 						// ????
+	.highlight .bp { color: $blue } 						// Name.Builtin.Pseudo
+	.highlight .vc { color: $blue } 						// Name.Variable.Class
+	.highlight .vg { color: $blue } 						// Name.Variable.Global
+	.highlight .vi { color: $blue } 						// Name.Variable.Instance
+	.highlight .nv { color: $blue } 						// Name.Variable
+	.highlight .w { color: $base1 } 						// Text.Whitespace
+	.highlight .m { color: $cyan } 							// Literal.Number
+	.highlight .mf { color: $cyan } 						// Literal.Number.Float
+	.highlight .mh { color: $cyan } 						// Literal.Number.Hex
+	.highlight .mi { color: $cyan } 						// Literal.Number.Integer
+	.highlight .mo { color: $cyan } 						// Literal.Number.Oct
+	.highlight .s { color: $cyan } 							// Literal.String
+	.highlight .sb { color: $base01 } 						// Literal.String.Backtick
+	.highlight .sc { color: $cyan } 						// Literal.String.Char
+	.highlight .sd { color: $base1 } 						// Literal.String.Doc
+	.highlight .s2 { color: $cyan } 						// Literal.String.Double
+	.highlight .se { color: $orange } 						// Literal.String.Escape
+	.highlight .sh { color: $base1 } 						// Literal.String.Heredoc
+	.highlight .si { color: $cyan } 						// Literal.String.Interpol
+	.highlight .sx { color: $cyan } 						// Literal.String.Other
+	.highlight .sr { color: $red } 							// Literal.String.Regex
+	.highlight .s1 { color: $cyan } 						// Literal.String.Single
+	.highlight .ss { color: $cyan } 						// Literal.String.Symbol
+	.highlight .il { color: $cyan }  						// Literal.Number.Integer.Long	
+	.highlight .py { color: $base1 } 						// ?????
+	.highlight .l { color: $base1 } 						// ?????
+	.highlight .x { color: $orange } 						// Specific
+	.highlight .ld { color: $base1 } 						// ?????

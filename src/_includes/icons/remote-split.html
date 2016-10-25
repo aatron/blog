@@ -1,0 +1,118 @@
+﻿<div class="remote__split {% if include.isModal != nil %}remote-modal{% endif %}">
+	<div class="remote__sensor">
+	</div>
+	<div class="remote__sensor__border">
+	</div>
+	<section class="remote__left">
+		<div class="top-buttons">
+		</div>
+		<div class="home-buttons">
+			{% include button-nav.html label="HOME" url="" %}
+		</div>
+		<div class="button-clump">
+			<ul class="nav__ul" >
+				<li class="nav__ul__li">
+					{% include button-nav.html label="BLOG" url="blog" %}
+				</li>
+				<li class="nav__ul__li">
+					{% include button-nav.html label="RSS" url="feeds/blog.xml" %}
+				</li>
+			</ul>
+		</div>
+		<div class="button-clump">
+			<ul class="nav__ul" >
+				<li class="nav__ul__li">
+					{% include button-nav.html label="DOCS" url="documentaries" %}
+				</li>
+				<li class="nav__ul__li">
+					{% include button-nav.html label="RSS" url="feeds/documentaries.xml" %}
+				</li>
+			</ul>
+		</div>
+	</section>
+	<div class="remote__right">
+		<div class="top-buttons">
+			<button class="remote__power__button" data-dismiss="modal">
+				{% include icons/power.html %}
+			</button>
+		</div>
+		<div class="me-buttons">
+			<div class="remote__me">
+				<div style="margin: auto; text-align: center; width: 135px;">
+					<ul class="remote__me__ul">
+						<li class="remote__me__li">
+							{% include button-nav.html label="MAQ" classes="" url="maq" %}
+						</li>
+						<li class="remote__me__li">
+							{% include button-nav.html label="ABOUT" classes="button__jekyll" url="about" %}
+						</li>
+						<li class="remote__me__li">
+							{% include button-nav.html label="CODE" url="https://github.com/aatron" %}
+						</li>
+					</ul>
+				</div>
+				<div class="remote__groupPanel remote__me__footer ">
+					<div class="remote__panelFooter remote__panelFooter__me">
+						<label class="remote__attrPanel__Label remote__panelFooter__Label">ME</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="button-clump">
+			<ul class="list__ul" >
+				{% assign sortedPosts = site.posts | sort "date" | reverse %}
+				{% assign postCounter = 0 %}
+				{% for post in sortedPosts limit:8  %}
+				<li class="list__ul__li">
+					{% assign postCounter = postCounter | plus: 1 %}
+					{% assign postUrl = post.url | prepend: site.baseurl %}
+					{% include button-nav.html label=postCounter url=postUrl %}
+				</li>
+				{% endfor %}
+				<li class="list__ul__li">
+					{% include button-nav.html label="ALL" url="blog" %}
+				</li>
+			</ul>
+		</div>
+		<div class="button-clump">
+			<ul class="list__ul" >
+				{% assign sortedDocs = site.documentaries | sort "date" | reverse %}
+				{% assign docCounter = 0 %}
+				{% for post in sortedDocs %}{% if post.reviewAvailable == "Yes"  %}
+				<li class="list__ul__li">
+					{% assign docCounter = docCounter | plus: 1 %}
+					{% assign postUrl = post.url | prepend: site.baseurl %}
+					{% include button-nav.html label=docCounter url=postUrl %}
+				</li>
+				{% endif %}
+					{% if docCounter >= 7  %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
+				<li class="list__ul__li">
+					{% include button-nav.html label="ALL" url="documentaries" %}
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="remote__attribution">
+		<div style="margin: auto; text-align: center; width: 180px;">
+			<ul class="remote__attribution__ul">
+				<li class="remote__attribution__li">
+					{% include button-nav.html label="OCTOPRESS" classes="button__octopress" url="" %}
+				</li>
+				<li class="remote__attribution__li">
+					{% include button-nav.html label="JEKYLL" classes="button__jekyll" url="" %}
+				</li>
+				<li class="remote__attribution__li">
+					{% include button-nav.html label="ALL" url="attribution" %}
+				</li>
+			</ul>
+		</div>
+		<div class="remote__groupPanel remote__attribution__footer ">
+			<div class="remote__panelFooter">
+				<label class="remote__attrPanel__Label remote__panelFooter__Label">ATTRIBUTION</label>
+			</div>
+		</div>
+	</div>
+</div>

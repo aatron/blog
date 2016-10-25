@@ -34,26 +34,21 @@ module Jekyll
     safe true
 
     def generate(site)
-      tagList = []
-
+      tags = []
       if site.layouts.has_key? 'doc_tag_page'
         dir = site.config['doc_tag_page_dir'] || 'tag'
-
-        # Build unique list of tags in all documentaries
-        for page in site.documents
-          if page["layout"] == 'documentary'
-            for tag in page["tags"]
-              cleanTag = tag.gsub ' ', ''
-              if !tagList.include? cleanTag
-                tagList << cleanTag
-              end
+        for i in 0..(site.documents.length-1)
+          if site.documents[i].data['layout'] == 'documentary'
+            doc = site.documents[i]  
+            for j in 0..(site.documents[i].data['tags'].length-1)
+                tags.push( site.documents[i].data['tags'][j] )
             end
           end
         end
-        
-        tagList.each do |tag|
-          write_tag_page(site, File.join(dir, tag), tag)
-        end
+      end
+      
+      tags.uniq.each do |tag|
+        write_tag_page(site, File.join(dir, tag), tag)
       end
     end
 

@@ -1,69 +1,39 @@
-// .container-fluid > .sidebar {
-//     position: relative;
-//     top: 0;
-//     left:auto;
-//     width: 220px; /* width of sidebar */
-// }
+@font-face {
+  font-family: 'liquid_crystalregular';
+    src: url('../assets/fonts/liquidcrystal.woff2') format('woff2'),
+         url('../assets/fonts/liquidcrystal.woff') format('woff');
+}
 
-// .left {
-//     float:left;
-// }
+@font-face {
+  font-family: 'robotoregular';
+    src: url('../assets/fonts/roboto.woff2') format('woff2'),
+         url('../assets/fonts/roboto.woff') format('woff');
+}
 
-// .right {
-//     float:right;
-// }
+@font-face {
+  font-family: 'goodfoot';
+    src: url('../assets/fonts/goodfoot.woff2') format('woff2'),
+         url('../assets/fonts/goodfoot.woff') format('woff');
+}
 
-// .container-fluid > .content {
-//     margin: 0 240px; /* width of sidebars + 10px of margin */
-// }
+body {
+    font-family: robotoregular;
+}
 
-// .sidebar-nav-fixed {
-// 	width:14%;
-// }
+.position-relative {
+    position: relative;
+}
 
-
-// .navbar-toggle {
-//   position: relative;
-//   float: right;
-//   margin-right: $navbar-padding-horizontal;
-//   padding: 9px 10px;
-//   @include navbar-vertical-align(34px);
-//   background-color: transparent;
-//   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-//   border: 1px solid transparent;
-//   border-radius: $border-radius-base;
-// 
-//   // We remove the `outline` here, but later compensate by attaching `:hover`
-//   // styles to `:focus`.
-//   &:focus {
-//     outline: 0;
-//   }
-// 
-//   // Bars
-//   .icon-bar {
-//     display: block;
-//     width: 22px;
-//     height: 2px;
-//     border-radius: 1px;
-//   }
-//   .icon-bar + .icon-bar {
-//     margin-top: 4px;
-//   }
-// 
-//   @media (min-width: $grid-float-breakpoint) {
-//     display: block;
-//   }
-// }
-
-
+.list-group-doc {
+    min-height: 85px;
+}
 
 .list-group {
     position: relative;
-    min-height: 45px;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 0px 0px;
+    opacity: 0.25;
 }
 
-    // z-index: -1;
 .list-group-background {
     position: absolute;
     top: 0;
@@ -71,20 +41,28 @@
     bottom: 0;
     right: 0;
     border: 0;
-    font-size: 50px;
-    opacity: 0.25;
-    line-height: 100px;
-    margin: -20px 0px 0px 15px;
+    font-size: 100px;
+    margin: -32px 0px 0px -2px;
+    z-index: -1;
+}
+
+.list-unstyled {
+    margin: 0px 0px 0px 0px;
 }
 
 .list-item {
-    display: block;
-    position: relative;
+    // position: relative;
+    margin: 0px 0px 0px 15px;
 }
 
-.list-link {
+a {
+    // margin: 0px 0px 0px 18px;
     text-decoration: none;
 }
+
+// .normal-link:active, .normal-link:hover {
+//     background: transparent;
+// }
 
 a.no-underline:active,
 a.no-underline:visited {
@@ -113,4 +91,128 @@ a.no-underline:visited {
 .maq-answer {
     margin: 0px 0px 10px 0px;
     font-style: italic;
+}
+
+.hoverThis {
+    cursor: pointer;
+}
+
+.float-left {
+    float: left;
+}
+
+h3 {
+    color: $yellow;
+}
+
+h4 {
+    font-weight: bold;
+    color: $yellow;
+}
+
+h5 {
+    font-weight: bold;
+    font-style: italic;
+    color: $yellow;
+}
+
+h6 {
+    font-style: italic;
+    color: $yellow;
+}
+
+// .tag-list {
+//     float: left;
+// }
+
+// Override Bootstrap
+pre {
+    border: none;
+    background: none;
+    padding: 0px;
+    color: $base1;
+}
+
+.content {
+    // padding: 0px;
+}
+
+.no-float {
+    float: none;
+}
+
+// Media queries
+.remote-wrapper {
+    @media screen and (max-width: $break-large) {
+        display: none;
+    }
+}
+
+.remote-float {
+    display: block !important;
+    position: fixed !important;
+    z-index: 10 !important;
+    left: 50%;
+    top: 50%;
+    margin: -238px 0px 0px -98px;
+}
+
+.tags-footer {
+    // @media screen and (min-width: $break-medium) {
+    //     display: block;
+    // }
+    // @media screen and (max-width: $break-small) {
+    //     display: none;
+    // }
+
+    margin-top: -60px;
+    z-index: -1;
+}
+
+.tags-header {
+    @media screen and (max-width: $break-medium) {
+        display: none;
+    }
+    @media screen and (min-width: $break-large) {
+        display: block;
+    }
+}
+
+.remote__power__button2 {
+    @extend .remote__power__button;
+    position: absolute;
+    margin: 10% 0px 0px 10px;
+
+    @media screen and (max-width: $break-medium) {
+        display: block;
+    }
+
+    @media screen and (min-width: $break-large) {
+        display: none;
+    }
+}
+
+.meta {
+    font-style: italic;
+}
+
+.post-list {
+    list-style: none;
+}
+
+.font-strike {
+    text-decoration: line-through;
+}
+
+.post {
+    min-height: 115px;
+}
+
+blockquote {
+    background-color: $base02;
+    font-size: inherit;
+}
+
+figure {
+    margin: -10px 0px 10px 0px;
 }

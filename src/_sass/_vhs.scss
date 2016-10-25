@@ -1,0 +1,174 @@
+$vhsLength: $vcrDoorWidth - 10px;
+$vhsHeight: ($vhsLength * 0.55) - 10px;
+
+.vhs-top {
+    @include border-top-radius(5px);
+    @include border-bottom-radius(5px 5px);
+    perspective: 500px;
+    perspective-origin:  11em 8em;
+}
+
+.vhs-top__content {
+    width: $vhsLength * 0.83;
+    height: $vhsHeight;
+    background: black;
+    text-align: center;
+    padding: 10px 0px 0px 0px;
+    // Uncomment these
+    transform: rotateX(74deg);
+    margin: 0px 0px -65px 27px;
+    @include box-shadow(inset -18px 0px 20px -15px $darkGreyAccent,
+                        inset 0px 51px 103px -30px $darkGreyAccent);
+}
+
+.vhs-top__content__reel-left {
+    background: $base1;
+    height: 50%;
+    width: 20%;
+    margin: 27px 7px 0px 7px;
+    padding: 0px;
+    @include border-left-radius(45px 68px);
+}
+    .vhs-spool {
+        width: 20px;
+        height: 20px;
+        @include border-radius(10px);
+        background: $base3;
+        margin: auto;
+    }
+
+    .vhs-spool-gap {
+        background: black;
+        width: 8px;
+        height: $vhsHeight / 2;
+    }
+
+    .vhs-spool-gap-right {
+        margin: (($vhsHeight / -4) - 10px) 0px 0px -1px;
+    }
+
+    .vhs-spool-gap-left {
+        margin: (($vhsHeight / -4) - 10px) 0px 0px 14px;
+    }
+
+    .vhs-top__content__reel-left_tape {
+        width: 60px;
+        height: 60px;
+        @include border-radius(34px);
+        background: $base01;
+        margin: 3px auto 0px 22px;
+        padding: 34%;
+    }
+
+.vhs-top__content__reel-right {
+    background: $base1;
+    height: 50%;
+    width: 20%;
+    margin: 27px 0px 0px 7px;
+    padding: 0px;
+    @include border-right-radius(45px 68px);
+}
+
+    .vhs-top__content__reel-right_tape {
+        width: 35px;
+        height: 35px;
+        @include border-radius(20px);
+        background: $base01;
+        margin: 13px auto 0px -13px;
+        padding: 12%;
+    }
+
+.vhs-top__content__label {
+    padding: 0px 0px 0px 0px;
+    background: $base3;
+    // font-family: jennasue;
+    font-size: 37px;
+    font-weight: bold; 
+    height: 50%;
+    margin: 27px 0px 0px 0px;
+    z-index: 1;
+}
+
+.vhs {
+    background: black;
+    margin: 1px 0px 0px 0px;
+    @include border-radius(5px);
+    @include box-shadow(inset -18px 0px 20px -15px $darkGreyAccent,
+                        inset 14px 0px 20px -15px $darkGreyAccent);
+    padding: 5px;
+    width: $vhsLength;
+    height: $vhsLength * 0.20;
+
+    // font-family: robotoregular; 
+}
+
+
+    .vhs__bottom {
+        height: 2px;
+        position: absolute;
+    }
+
+    .vhs__indent {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        background: $base3;
+        height:100%; 
+        @include border-radius(5px);
+        float: left;
+        font-size: 20px;
+    }
+
+        .vhs__indent__top {
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+        }
+
+        .vhs__indent__middle {
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+        }
+
+        .vhs__indent__bottom {
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+        }
+
+    .vhs__info {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 3px 0px 0px;
+        height: 100%;
+        color: $darkGrey;
+        // width: $vhsLength * (1/7);
+    }
+
+        .vhs__info__big {
+            width: 100%;
+            float: left;
+            font-size: 13px;
+        }
+
+        .vhs__info__small {
+            width: 100%;
+            float: left;
+            font-size: 9px;
+        }
+
+    .vhs__tab {
+        // border: solid 1px $darkGreyAccent;
+        @include box-shadow(inset 0px 0px 1px 1px $darkGreyAccent);
+        height: 20px;
+        width: 20px;
+        float: right;
+        margin: 7px 5px 0px 0px;
+    }
+
+.vhs-label {
+    font-family: goodfoot;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 3px 0px 0px 4px;
+    position: absolute;
+}
+    .vhs-label-tag:hover {
+        background-color: $base3;
+    } 

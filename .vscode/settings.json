@@ -1,0 +1,9 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "editor.tabSize": 2,
+  "markdownlint.config": {
+    "MD033": false,   // Inline html
+    "MD026": false,   // no trailing punctuation
+    "MD002": false    // H1 first header 
+  }
+}

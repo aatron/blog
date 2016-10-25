@@ -9,7 +9,7 @@ module demoApp {
         title: string;
         total: number;
         dateAdded: Date;
-        recommendation: Boolean;
+        recommend: Boolean;
         sources: ISource[];
     }
 

@@ -1,0 +1,262 @@
+$remote-width: 200px;
+$remote-divider-width: 7px;
+$remote-left-width: 55px;
+$remote-right-width: 141px;
+$remoteBorderColor: $darkGreyAccent;
+$remoteBackgroundColor: $darkGrey;
+$remoteInset: inset 0px -9px 29px 1px $darkGreyAccent;
+$border-button-circle: 6px;
+$remote-main-height: 335px;
+$remote-home-height: 65px;
+$remote-clump-height: 117px;
+
+.remote__power {
+}
+
+    .remote__power__button {
+        @include border-radius(10px);
+        background-color: $red;
+        fill: $base3;
+        padding: 0px;
+        height: 23px;
+    }
+
+        .remote__power__button:hover {
+            background-color: $base1;
+        }
+
+        .remote__power__button:active {
+            background-color: $base00;
+        }
+
+    .remote__power__shape {
+        width: 20px;
+        height: 20px;
+    }
+
+.remote__split {
+    background-color: $remoteBackgroundColor;
+    border-right: solid 2px $base3;
+    border-top: solid 2px $base3;
+    border-left: solid 2px $base3;
+    border-bottom: solid 2px $base3;
+    border-color: $remoteBorderColor;
+    border-width: 0px;
+    @include border-top-radius(162px 35px);
+    @include border-bottom-radius(162px 20px);
+    width: $remote-width;
+    height: 480px;
+    padding: 2px;
+    @include box-shadow(inset 0px -9px 29px 1px $darkGreyAccent);
+}
+
+.remote__left {
+    float: left;
+    @include box-shadow(inset -12px 0px $remote-divider-width -12px $darkGreyAccent);
+    padding: 0px $remote-divider-width 0px 0px;
+    height: $remote-main-height;
+    width: 55px;
+}
+
+.remote__right {
+    float: left;
+    width: 141px;
+    height: $remote-main-height;
+    @include box-shadow(-2px 4px $remote-divider-width 0px $darkGreyAccent);
+    @include border-bottom-left-radius(5px);
+}
+
+.nav__button {
+    margin: auto;
+    text-align: center;
+}
+
+    .nav__button__label {
+        font-weight: normal;
+        margin: auto;
+    }
+
+    .nav__button__link {
+        background: $darkGreyAccent;
+        @include box-shadow(0px 2px 3px 0px black );
+        @include border-radius(1px);
+        border: none;
+        color: $cyanAccent;
+        height: 7px;
+        width: 37px;
+        display: block;
+        margin: auto;
+    }
+
+        .nav__button__link:hover {
+	        background-color: $base02;
+        }
+
+.nav__ul {
+    height: 125px;
+    padding: 0px;
+}
+
+    .nav__ul__li {
+        list-style: none;
+        height: 33px;
+    }
+
+.remote__sensor {
+    @include border-top-radius(162px 35px);
+    width: $remote-width;
+    @include box-shadow(inset 0px 8px 17px -6px $darkGreyAccent);
+    height: 35px;
+    background: black;
+    margin: -2px 0px -2px -2px;
+}
+
+    .remote__sensor__border {
+        width: $remote-width;
+        @include box-shadow(inset 0px -8px 5px -7px $darkGreyAccent);
+        height: 15px;
+        background: black;
+        margin: 0px 0px 0px -2px;
+    }
+
+.list__ul {
+    padding: 0px;
+    min-height: 35px;
+    display: block;
+}
+
+    .list__ul__li {
+        list-style: none;
+        float: left;
+        height: 33px;
+        margin: 0px 0px 0px 7px;
+    }
+
+.button-clump {
+    height: $remote-clump-height;
+}
+
+.remote__attrPanel__Label {
+    // margin: 5px 0px 0px 4px;
+    // position: absolute;
+}
+
+.remote__panelFooter {
+    border-bottom: solid 1px $base0;
+    border-left: solid 1px $base0;
+    border-right: solid 1px $base0;
+    height: 15px;
+    width: 133px;
+    margin: auto;
+}
+
+    .remote__panelFooter__Label {
+        color: $base0;
+        padding: 0px 3px;
+        margin: 3px 0px 0px 0px;
+        font-weight: normal;
+        background: $remoteBackgroundColor;
+    }
+
+.remote__attribution {
+    margin: 15px 0px 0px 0px;
+    text-align: center;
+    width: $remote-width;
+    font-size: 12px;
+    float: left;
+}
+
+    .remote__attribution__footer {
+        width: $remote-width;
+        // width: 114px;
+        height: 40px;
+        float: left;
+        text-align: center;
+        // margin: 2px 0px 0px 53px;
+        margin: 5px 0px 0px 0px;
+    }
+
+.button__octopress {
+    width: 78px;
+    // margin: 0px 10px 0px 0px;
+}
+
+.button__jekyll {
+    width: 50px;
+    // margin: 0px 10px 0px 0px;
+}
+
+.remote__attribution__ul {
+    list-style: none;
+    margin: auto;
+    padding: 0px;
+    display: block;
+    min-height: 10px;
+}
+
+.remote__attribution__li {
+    float: left;
+}
+
+.remote__attribution__li:not(:first-child) {
+    margin: 0px 0px 0px 7px;
+}
+
+.top-buttons {
+    width: 140px;
+    height: 45px;
+    text-align: right;
+    padding: 6px 3px 0px 0px;
+}
+
+.me-buttons {
+    height: $remote-home-height;
+    width: 135px;
+    margin: auto;
+}
+
+.remote__me {
+    margin: auto;
+    padding: 3px 0px 0px 0px;
+    text-align: center;
+    width: 140px;
+    font-size: 12px;
+    float: left;
+}
+
+    .remote__me__footer {
+        // width: $remote-left-width;
+        // float: left;
+        text-align: center;
+        margin: 18px auto 0px auto;
+    }
+
+    .remote__panelFooter__me {
+        width: 100px;
+    }
+
+    .remote__me__ul {
+        list-style: none;
+        margin: auto;
+        padding: 0px;
+        display: block;
+        min-height: 10px;
+    }
+
+        .remote__me__li {
+            float: left;
+        }
+
+            .remote__me__li:not(:first-child) {
+                margin: 0px 0px 0px 4px;
+            }
+
+.home-buttons {
+    height: $remote-home-height;
+    width: 50px;
+    margin: auto;
+}
+
+.remote-modal {
+    margin: auto;
+}

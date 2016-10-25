@@ -1,9 +1,9 @@
 ---
-layout: {{ layout }}
+layout: documentary
 title: "{{ title }}"
 date: {{ date }}
-reviewAvailable: "Yes|No"
-recommendation: "Yes|No|Maybe"
+reviewAvailable: "No"
+recommend: "Yes|No"
 kidFriendly: "Yes|No"
 sources:
   - title: "Netflix"
@@ -16,7 +16,6 @@ sources:
     url: "http://tmdb.org/something"
 tags:
   - Biography 
-  - Economics
   - Politics
   - Poverty
   - Prison
@@ -27,17 +26,21 @@ tags:
   - Celebrity
   - Clothes
   - Cooking
+  - Competition
   - Design
+  - Faith
   - Funny
   - History
   - Inventions
   - Movies
   - Music
+  - TV
   - Nature
   - Money
   - Slice of Life
-  - Sports
-  - Religion
+  - Technology
+  - Drink
+  - Food
 
   - Important
 ---

@@ -1,0 +1,21 @@
+{% if include.documentary.reviewAvailable == "Yes" %}
+    {% if include.documentary.recommend != 'Yes' %}
+        {% if include.recommend == nil %}
+            <s><a href="{{ include.documentary.url | prepend: site.baseurl }}">{{ include.documentary.title }}</a></s>
+        {% else %}
+            <a href="{{ include.documentary.url | prepend: site.baseurl }}">{{ include.documentary.title }}</a>
+        {% endif %}
+    {% else %}
+        <a href="{{ include.documentary.url | prepend: site.baseurl }}">{{ include.documentary.title }}</a>
+    {% endif %}
+{% else %}
+    {% if include.documentary.recommend != 'Yes' %}
+        {% if include.recommend == nil %}
+            <s><span>{{ include.documentary.title }}</span></s>
+        {% else %}
+            <span>{{ include.documentary.title }}</span>
+        {% endif %}
+    {% else %}
+        <span>{{ include.documentary.title }}</span>
+    {% endif %}
+{% endif %}

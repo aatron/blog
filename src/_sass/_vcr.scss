@@ -1,0 +1,388 @@
+// TODO: Eject - go up in navigation until home
+$vcrBackgroundColor: $darkGrey;
+$vcrWidth: 691px;
+$vcrHeight: 140px;
+$vcrDoorWidth: $vcrWidth / 2;
+$vcrDoorHeight: $vcrDoorWidth * 0.20;
+
+.vcr-wrapper {
+    width: $vcrWidth;
+    @media screen and (max-width: $break-small) {
+        display: none;
+        margin: auto; 
+    }
+    @media screen and (min-width: $break-medium) {
+        display: block;
+    }
+}
+
+.vcr {
+    width: $vcrWidth;
+    height: 155px;
+    // background: $vcrBackgroundColor;
+    float: left;
+    margin: 0px 0px 30px 0px;
+    @media screen and (max-width: $break-small) {
+        width: 100px;
+        float: none;
+    }
+}
+
+.vcr-top {
+    height: $vcrHeight / 8; 
+}
+
+.vcr-door {
+    @include border-top-radius(10px);
+    @include box-shadow(inset 0px -9px 29px 1px $darkGreyAccent);
+    width: $vcrWidth / 2;
+    height: $vcrDoorHeight;
+    background: $vcrBackgroundColor;
+    perspective: 1em;
+    perspective-origin: left;
+}
+    .vcr-door__panel {
+        background: red;
+        border: solid 1px white;
+        height: inherit;
+        width: inherit;
+    }
+
+    .vcr-door__top {
+        transform: rotateX(-45deg);
+        width: $vcrDoorWidth;
+        height: 5px;
+        position: relative;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .vcr-door__bottom {
+        transform: rotateX(45deg);
+        width: $vcrDoorWidth;
+        height: 5px;
+        position: relative;
+        margin: 0px 0px 0px 0px;
+        // float: left;
+    }
+
+    .vcr-door__left {
+        transform: rotateY(173deg);
+        width: 10px;
+        height: $vcrDoorHeight;
+        position: relative;
+        margin: -49px 0px 0px -21px;
+        // float: left;
+    }
+
+    .vcr-door__right {
+        transform: rotateY(-173deg);
+        width: 10px;
+        height: $vcrDoorHeight;
+        position: relative;
+        margin: 0px 0px 0px 24.4em;
+        // float: right;
+    }
+
+////////////////////////////////////////////////////
+
+.vcr-door2 {
+    // @include border-top-radius(10px);
+    // @include box-shadow(inset 0px -9px 29px 1px $darkGreyAccent);
+    width: $vcrWidth / 2;
+    height: $vcrDoorHeight;
+    background: $vcrBackgroundColor;
+    perspective: 160px;
+    position: relative;
+    margin: 2px auto 12px auto;
+}
+    .vcr-door2__panel-short {
+        background: black;
+        @include border-top-radius(10px);
+        @include box-shadow(inset 14px 2px 12px 2px $darkGreyAccent);
+        border: none;
+        height: inherit;
+        // width: inherit;
+        width: 4px;
+    }
+
+    .vcr-door2__panel-long {
+        background: black;
+        @include border-top-radius(10px);
+        @include box-shadow(inset 0px 4px 1px 3px $darkGreyAccent);
+        border: none;
+        height: inherit;
+        width: inherit;
+    }
+
+    .vcr-door2__top {
+        transform: rotateX(-45deg);
+        width: $vcrDoorWidth;
+        height: 2px;
+        position: absolute;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .vcr-door2__bottom {
+        transform: rotateX(45deg);
+        width: $vcrDoorWidth;
+        height: 5px;
+        position: absolute;
+        margin: 65px 0px 0px 0px;
+        // float: left;
+    }
+
+    .vcr-door2__left {
+        transform: rotateY(174.8deg);
+        width: 10px;
+        height: $vcrDoorHeight;
+        position: absolute;
+        margin: 0px 0px 0px -7px;
+        // float: left;
+    }
+
+    .vcr-door2__right {
+        transform: rotateY(-174.8deg);
+        width: 10px;
+        height: $vcrDoorHeight;
+        position: absolute;
+        margin: 0px 0px 0px 24.2em;
+        // float: right;
+    }
+
+    .vcr-door2__indent {
+        background: $darkGreyAccent;
+        @include border-top-radius(10px);
+        @include box-shadow(inset 14px 2px 12px 2px $darkGreyAccent);
+        border: none;
+        height: 40px;
+        // width: inherit;
+        width: 5px;
+    }
+
+.vcr-back {
+    perspective: $vcrWidth * 0.75;
+    height: $vcrHeight * 0.25;
+    perspective-origin: 26em 0em;
+}
+
+    .vcr-back__top-big {
+        width: 586px;
+        height: 160px;
+        transform: rotateX(81deg);
+        @include box-shadow(inset 0px -20px 154px 73px $vcrBackgroundColor, inset 0px 4px 21px -2px $darkGreyAccent);
+        // inset 0px -75px 88px -22px // reverse colors
+        background: $base3;
+        position: absolute;
+        margin: -4.5em 0em 0em 4em;
+        @include border-top-radius(10px);
+        @include border-bottom-radius(6px);
+    }
+
+    .vcr-back__top-small {
+        width: 625px;
+        height: 2px;
+        // transform: rotateX(70deg);
+        // @include box-shadow(inset 0px -1px 227px 59px $lightGreyAccent);
+        // inset 0px -75px 88px -22px // reverse colors
+        // background: $base3;
+        position: absolute;
+        margin: 1.6em 0em 0em 2.7em;
+        // border-top: solid 1px black;
+        @include box-shadow(inset 0px 1px 4px 0px  $darkGreyAccent);
+        // @include border-top-radius(9px);
+    }
+
+.vcr-right {
+    float: left;
+    width: $vcrWidth / 6;
+}
+
+.vcr-center {
+    // float: left;
+    margin: auto;
+    text-align: center;
+    // width: $vcrWidth * (2 / 3);
+    padding: 10px 0px;
+}
+
+.vcr-left {
+    float: left;
+    width: $vcrWidth / 6;
+    height: 10px;
+}
+
+//////////////////////////////////////////////
+
+
+
+.vcr-main {
+    background: $vcrBackgroundColor;
+    // @include box-shadow(inset 0px -9px 29px 1px $darkGreyAccent);
+    @include box-shadow(inset 0px -7px 44px -4px $darkGreyAccent);
+    // @include box-shadow(inset 0px -7px 44px -4px $lightGreyAccent);
+    position: relative;
+    height: 160px;
+    @include border-top-radius(2px 20px);
+    @include border-bottom-radius(10px 5px);
+}
+
+.vcr-channels {
+
+}
+
+    .vcr-channel {
+        float: left;
+        height: 15px;
+        width: 25px;
+    }
+
+.vcr-inputs {
+
+}
+
+.vcr-input {
+    height: 20px;
+    width: 20px;
+    @include border-radius(10px);
+    background: white;
+    float: left;
+}
+
+    .vcr-input__text {
+    }
+
+.vcr-display-wrapper{
+    padding: 4px 17px;
+    margin: 10px auto;
+}
+
+    .vcr-power {
+        width: 23px;
+        height: 23px;
+        position: absolute;
+        margin: 8px 0px 0px 5px;
+
+        @media screen and (min-width: $break-large) {
+            display: none;
+        }
+    }
+
+    .vcr-power-display {
+        // width: 23px;
+        height: 23px;
+        margin: 8px 0px 0px 8px;
+        float: left;
+        position: relative;
+        z-index: 1;
+
+        @media screen and (min-width: $break-small) {
+            display: none;
+        }
+    }
+
+.vcr-display {
+    margin: auto;
+    background: black;
+    font-family: liquid_crystalregular;
+    font-size: 30px;
+    
+    // @include border-top-radius(40px 120px);
+    // @include border-bottom-radius(5px 5px);
+    @include box-shadow(inset 0px 0px 4px 1px $darkGreyAccent);
+    
+    // Needed for background text 
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+}
+
+.vcr-display-in-vcr {
+    width: $vcrWidth * (4/5);
+}
+    // .vcr-display__backText {
+    //     color: #020202;
+    //     position: relative;
+    // }
+
+.vcr-dial {
+    background: white;
+    @include border-radius(25px);
+    height: 50px;
+    width: 50px;
+}
+
+.vcr-buttons {
+    float: left;
+}
+
+.vcr-legs {
+    background: $darkGreyAccent;
+    @include border-bottom-radius(4px 2px);
+    width: $vcrWidth * 0.97;
+    height: 10px;
+    margin: auto;
+    // @include box-shadow(inset 0px -9px 29px 1px $darkGreyAccent);
+}
+
+.vcr-leg {
+
+}
+
+
+.vhs-tapes {
+    float: left;
+    list-style: none;
+    padding: 0px;
+}
+
+.vcr-leds {
+    list-style: none;
+    padding: 0px 0px 0px 0px;
+}
+
+    .vcr-leds__li {
+        height: 22px;
+    }
+
+    .vcr-led__label {
+        margin: 0px 0px 0px 0px;
+    }
+
+.vcr-led {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 5px 7px 0px 0px;
+    float: left;
+}
+
+    .led-on {
+        // margin: 20px auto;
+        background-color: $green;
+        // box-shadow: #000 0 -1px 7px 1px, inset #460 0 -1px 9px, #7D0 0 2px 12px;
+    }
+
+    .led-off {
+        // margin: 20px auto;
+        background-color: $darkGreyAccent;
+        border-radius: 50%;
+        // box-shadow: #000 0 -1px 7px 1px;
+    }
+
+
+.vcr-display-only {
+    @extend .vcr-display;
+    margin: 0px 38px;
+    @media screen and (max-width: $break-small) {
+        display: block;
+        text-align: center;
+        // margin: auto;
+        // width: none;
+        // margin: 10px auto;
+    }
+
+    @media screen and (min-width: $break-small) {
+        display: none;
+    }
+}
+

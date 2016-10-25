@@ -1,0 +1,344 @@
+---
+layout: post
+title: "Angular 101"
+date: 2016-10-24T09:19:16-07:00
+tags:
+    - Angular
+    - Angular-Cli
+    - JavaScript
+    - TypeScript
+---
+
+### Overview
+
+This is a crash course on getting started with Angular 2. After showing a few tutorials, I will walk through the first steps of an app that searches a movie list.
+
+For tooling, I use [VS Code](https://code.visualstudio.com/) and a command prompt on Windows. Each tutorial subfolder I open with VS Code.
+
+Code for these examples is posted [here](http://github.com/aatron/angularexamples).
+
+### Prerequsites
+
+All tutorials require these prequisites:
+
+* [Node](https://nodejs.org)
+* [npm](https://www.npmjs.com/)
+* IDE - I use [VS Code](https://code.visualstudio.com/)
+
+### Hello World Tutorials
+
+Here are some different tutorials to get started:
+
+1. [Basic](https://angular.io/docs/ts/latest/quickstart.html) - you need to copy and paste the text.
+2. Generate - use [Angular-CLI](https://github.com/angular/angular-cli) 
+
+It is worth noting that [yeoman](http://yeoman.io) has an [Angular Generator](https://github.com/yeoman/generator-angular) but I suspect that this project might have been abandoned.
+
+### Glossary
+
+Here are terse definitions of some Angular and JavaScript terms. For full list and definitions, go [here](https://angular.io/docs/ts/latest/guide/glossary.html).
+
+* Bootstrap - launch an application by determining root component that is called first
+* Module - groups of code centered around one purpose, always need one root module to bootstrap the application
+  * Angular Module - Angular's way of organizing chunks of code
+  * ES2015 module - requires a 3rd party library like SystemJS
+* Binding - connecting HTML object with a data object property
+  * Interpolation - one-way binding using handlebar syntax 
+  * Property binding - bind HTML element's property or a property of a custom component
+  * Event binding - element sends action to component, such as a click
+  * Attribute binding - when binding to a DOM object's attribute instead of a property
+  * Class binding - sets class names, can replace entire attribute or add/remove specific name
+  * Style binding - binds element's style, similar in execution to property binding  
+  * Two-Way - uses ngModel and "banana in a box" syntax to have the binding go two ways 
+* Decorator - function that augments a class with metadata to a class including members and functions
+* Dependency Injection - injects classes and handles dependiencies
+* Directive - this is the most basic feature of Angular, it alters HTML elements in the DOM
+  * Component - class that makes data available for views and responsible for the view's logic.
+  * Attribute directive - used as HTML attributes like `ngClass`
+  * Structural directive - conditional or looping such as `ngIf` or `ngFor` 
+* Observable - asynchronous items arraigned in an array
+* Service - decoupled shared logic which keeps the components smaller, often makes external calls
+* Template - Angular uses a snippet of HTML to render the view
+* View - part of the screen that is rendered
+
+### Tutorial - Movie search
+
+Create a new project using cli:
+{%  highlight bash %}
+    ng new MovieSearch
+    cd MovieSearch
+    ng serve
+{%  endhighlight %}
+
+#### Scaffold new files
+
+Scaffold files using cli:
+{%  highlight bash %}
+  ng g class movie
+  ng g service movie.service
+  ng g class mock-movies 
+{%  endhighlight %}
+
+Fill out these files:
+
+_movie.ts_
+{%  highlight typescript %}
+export class Movie {
+  constructor(public title = '', public tags: string[] = []) { }
+  clone() { return new Movie(this.title, this.tags); }
+}
+{%  endhighlight %}
+
+_mock-movies.ts_
+{%  highlight typescript %}
+import { Movie } from './movie';
+
+export const MOVIES: Movie[] = [
+  { title: 'Bird Paintings', tags: [ 'Art', 'Nature' ] },
+  { title: 'Money Man', tags: [ 'Money', 'Biography' ] },
+  { title: 'Picasso', tags: [ 'Art', 'Biography' ] }
+];
+{%  endhighlight %}
+
+_movie.service.ts_
+{%  highlight typescript %}
+import { Injectable } from '@angular/core';
+
+import { Movie } from './movie';
+import { MOVIES } from './mock-movies';
+
+@Injectable()
+export class MovieService {
+  constructor() { }
+
+  getMovies(): Promise<Movie[]> {
+    return Promise.resolve(MOVIES);
+  }
+}
+{%  endhighlight %}
+
+_app.component.html_
+{%  highlight xml %}
+<h1>
+  {% raw %}{{title}}{% endraw %}
+  <ul id='movie-list'>
+    <li *ngFor="let movie of movies">
+      <span>{% raw %}{{movie.title}}{% endraw %}</span> 
+      <ul>
+        <li *ngFor="let tag of movie.tags">
+          {% raw %}{{tag}}{% endraw %}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</h1>
+{%  endhighlight %}
+
+_app.component.ts_
+{%  highlight typescript %}
+import { Component, OnInit } from '@angular/core';
+import { Movie } from './movie';
+import { MovieService } from './movie.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  providers: [MovieService]
+})
+export class AppComponent implements OnInit {
+  title = 'Hello Movies.';
+
+  movies: Movie[];
+
+  ngOnInit(): void {
+    this.getMovies();
+  }
+
+  constructor(private movieService: MovieService) {}
+
+  getMovies(): void {
+    this.movieService.getMovies().then(movies => this.movies = movies);
+  }
+}
+{% endhighlight %}
+
+_app.module.ts_
+{%  highlight typescript %}
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+{%  endhighlight %}
+
+#### Unit tests
+
+Run Karma to confirm everything is in place:
+{% highlight bash %}
+npm test
+{% endhighlight %}
+
+After waiting approx. 30-60 seconds to run, check the cmd output to confirm all tests pass. This command prompt and browser window will stay open and auto run against changes made. To debug unit tests, use the browser tools in the Chrome instance.
+
+When finished, stop the command in the cmd instead of closing the browser.
+
+_movie.spec.ts_
+{%  highlight typescript %}
+import { Movie } from './movie';
+
+// Isolated tests - no need for BeforeEach
+describe('Movie', () => {
+  it('has title', () => {
+    const movie = new Movie('Bird Paintings', ['Art', 'Nature']);
+    expect(movie.title).toBe('Bird Paintings');
+  });
+
+  it('has tags', () => {
+    const movie = new Movie('Bird Paintings', ['Art', 'Nature']);
+    expect(movie.tags.length).toBe(2);
+    expect(movie.tags[1]).toBe('Nature');
+  });
+
+  it('can clone itself', () => {
+    const movie = new Movie('Bird Paintings', ['Art', 'Nature']);
+    const clone = movie.clone();
+    expect(movie).toEqual(clone);
+  });
+});
+{%  endhighlight %}
+
+_movie.service.spec.ts_
+{%  highlight typescript %}
+import { TestBed, async, inject } from '@angular/core/testing';
+import { MovieService } from './movie.service';
+
+// Isolated - no injection
+describe('Service: Movie (isolated)', () => {
+  it('should get movies', function(done) {
+    let service = new MovieService();
+
+    service.getMovies().then(function(movies) {
+      expect(movies.length).toBeGreaterThan(0);
+      done();
+    }, function(e) {
+      done.fail('The promise rejected because of ' + e.message);
+    });
+  });
+});
+
+// Inject service (these tests probably shouldn't exist...)
+describe('Service: Movie', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [MovieService]
+    });
+  });
+
+  it('should get movies', inject([MovieService], (service: MovieService) => function(done) {
+    service.getMovies().then(function(movies) {
+      expect(movies.length).toBeGreaterThan(0);
+      done();
+    }, function(e) {
+      done.fail('The promise rejected because of ' + e.message);
+    });
+  }));
+});
+{%  endhighlight %}
+
+_app.component.spec.ts_
+{%  highlight typescript %}
+import { DebugElement } from '@angular/core';
+import { TestBed, async, ComponentFixture, tick, fakeAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { MovieService } from './movie.service';
+import { Movie } from './movie';
+import { MOVIES } from './mock-movies';
+
+let comp: AppComponent;
+let fixture: ComponentFixture<AppComponent>;
+let spy: jasmine.Spy;
+let service: MovieService;
+let moviesResult: Movie[];
+
+describe('App: DocumentaryFilter', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        AppComponent
+      ],
+      providers: [
+        MovieService
+        ]
+    });
+
+    fixture = TestBed.createComponent(AppComponent);
+    comp = fixture.componentInstance;
+
+    // MovieService is injected into the component
+    service = fixture.debugElement.injector.get(MovieService);
+
+    // spy on getMovies method
+    spy = spyOn(service, 'getMovies')
+          .and.returnValue(Promise.resolve(MOVIES));
+  });
+
+  it('should create the app', async(() => {
+    let app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
+  }));
+
+  it(`should have as title 'Hello Movies.'`, async(() => {
+    let app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('Hello Movies.');
+  }));
+
+  it('should render title in a h1 tag', async(() => {
+    fixture.detectChanges();
+    let compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Hello Movies.');
+  }));
+
+  it('should show movies after getMovies promise (async)', async(() => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => { // wait for async getMovies
+      fixture.detectChanges();        // update view with movies
+      let movieList = fixture.debugElement.query(By.css('#movie-list')).children;
+      expect(3).toBe(movieList.length);
+    });
+  }));
+
+  // Note: fakeAsync can't make xhr call
+  it('should show movies after getMovie promise (fakeAsync)', fakeAsync(() => {
+    fixture.detectChanges();
+    tick();                  // wait for async getMovies
+    fixture.detectChanges(); // update view with movies
+    let movieList = fixture.debugElement.query(By.css('#movie-list')).children;
+    expect(3).toBe(movieList.length);
+  }));
+});
+
+{%  endhighlight %}
+
+### Summary
+
+The tooling with the cli is really useful even though it is currently in beta. It would be great to have commands that create asynchronous methods and stubs for their unit test(s).
+
+While reviewing the debugger in the browser, I noticed that the file MovieService.js was unreadable. The problem is most likely with me and I'm too distracted by shiny things to get to the bottom of it right now.

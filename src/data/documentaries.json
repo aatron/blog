@@ -1,12 +1,13 @@
 ---
 layout: null
 ---
-[{% for doc in site.documentaries %}
+{% assign sortedDocs = site.documentaries | sort "date" | reverse %}
+[{% for doc in sortedDocs limit:10 %}
   {
     "title":  "{{ doc.title | xml_escape }}",
     "tags": [{% for tag in doc.tags %}"{{tag}}"{% if forloop.length > forloop.index %}, {% endif %}{% endfor %}],
     "dateAdded": "{{ doc.date | date_to_xmlschema }}",
-    "recommendation": "{{doc.recommendation}}",
+    "recommend": "{{doc.recommend}}",
     "sources": [{% for source in doc.sources %}
       {
         "title": "{{source.title}}",

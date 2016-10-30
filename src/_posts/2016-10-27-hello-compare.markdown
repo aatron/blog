@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello Compare"
-date: 2016-10-20T21:23:25-07:00
+date: 2016-10-27T21:23:25-07:00
 tags:
     - C#
     - F#
@@ -13,23 +13,24 @@ tags:
     - PowerShell
 ---
 
-This is going to be the first in an ongoing series of solving a solution in multiple languages. The code is posted [here](http://github.com/aatron/compare).
+This is going to be the first in an ongoing series of solving problems in multiple languages. The code is posted [here](http://github.com/aatron/compare) along with instructions to run each example.
 
-To kick things off, let's do a 'Hello World' problem.
+To kick things off, let's do a '[Hello World](https://github.com/aatron/compare/tree/master/1.HelloWorld)' problem.
 
-<ul class="nav nav-tabs" data-tabs="codeSnippets" >
-  <li role="presentation"><a href="#cs">C#</a></li>
-  <li role="presentation"><a href="#fs">F#</a></li>
-  <li role="presentation"><a href="#js">JavaScript</a></li>
-  <li role="presentation"><a href="#ts">TypeScript</a></li>
-  <li role="presentation"><a href="#r">R</a></li>
-  <li role="presentation"><a href="#go">Go</a></li>
-  <li role="presentation"><a href="#rb">Ruby</a></li>
-  <li role="presentation"><a href="#ps">Powershell</a></li>
+<ul id="code-tabs" class="nav nav-tabs" data-tabs="codeSnippets" >
+  <li class="active"><a href="#cs">C#</a></li>
+  <li><a href="#fs">F#</a></li>
+  <li><a href="#js">JavaScript</a></li>
+  <li><a href="#ts">TypeScript</a></li>
+  <li><a href="#r">R</a></li>
+  <li><a href="#go">Go</a></li>
+  <li><a href="#rb">Ruby</a></li>
+  <li><a href="#ps">Powershell</a></li>
 </ul>
 <div id="codeSnippets" class="tab-content">
-  <div class="tab-pane" id="cs">
-{%  highlight c# %}
+  <div class="tab-pane active" id="cs">
+{% highlight c# %}
+{% github_sample_ref /aatron/compare/d77d2d3a7afcd0d9ee5c6a5b476f9520e518a3a3/c#/Program.cs %}
 using System;
 
 class Program
@@ -77,14 +78,23 @@ func main() {
 }
 {%  endhighlight %}
   </div>
-  <div class="tab-pane" id="ruby">
+  <div class="tab-pane" id="rb">
 {%  highlight ruby %}
 puts "Hello World."
 {%  endhighlight %}
   </div>
-  <div class="tab-pane" id="powershell">
+  <div class="tab-pane" id="ps">
 {%  highlight powershell %}
 Write-Host "Hello World."
 {%  endhighlight %}
   </div>
 </div>
+
+<script>
+  $(function () {
+    $('#code-tabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    });
+  })
+</script>

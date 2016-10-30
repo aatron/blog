@@ -216,3 +216,46 @@ blockquote {
 figure {
     margin: -10px 0px 10px 0px;
 }
+
+figure > pre {
+    margin: 0px;
+}
+
+#codeSnippets figure {
+    margin: auto;
+}
+
+.nav-tabs {
+    border: none;
+}
+
+#code-tabs {
+    background-color: $base03;
+    // margin: 0px 0px 0px 10px;
+}
+
+.nav-tabs > li {
+    margin-bottom: -2px;
+}
+
+.nav-tabs > li > a {
+    @include border-top-radius(2px);
+    @include border-bottom-radius(0px);
+}
+
+.nav-tabs > li > a:focus, 
+.nav-tabs > li > a:hover {
+    border: none;    
+    background-color: $base02;
+}
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:focus, 
+.nav-tabs > li.active > a:hover {
+    border-bottom: none;    
+    border-left: 1px solid $blueGrey;
+    border-right: 1px solid $blueGrey;
+    border-top: 1px solid $blueGrey;
+    background-color: $base02;
+    color: $base01;
+}

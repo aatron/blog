@@ -65,7 +65,6 @@ $remote-clump-height: 117px;
     @include box-shadow(-2px 4px $remote-divider-width 0px $darkGreyAccent);
     @include border-bottom-left-radius(5px);
 }
-
 .nav__button {
     margin: auto;
     text-align: center;
